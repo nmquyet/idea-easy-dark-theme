@@ -1,0 +1,102 @@
+{
+  "name": "Easy Dark",
+  "dark": true,
+  "author": "qyengyn",
+  "editorScheme": "Easy Dark",
+  "colors": {
+    "background": "#282828",
+    "editor": "#32302F",
+    "selection": "#094770",
+    "text": "#BDAF93",
+    "infoText": "#807766",
+    "selectedText": "#EBDBB2",
+    "inactiveSelection": "#383635",
+    "accent": "#4B88C7",
+    "border": "#363433"
+  },
+  "ui": {
+    "*": {
+      "foreground": "text",
+      "background": "background",
+      "selectionBackground": "selection",
+      "selectionForeground": "selectedText",
+      "separatorColor": "border",
+      "infoForeground": "infoText",
+      "arc": 8
+    },
+    "Editor": {
+      "background": "editor"
+    },
+    "Borders": {
+      "color": "border",
+      "ContrastBorderColor": "border"
+    },
+    "DefaultTabs": {
+      "hoverBackground": "border",
+      "borderColor": "border"
+    },
+    "EditorTabs": {
+      "unselectedBlend": "0.6",
+      "unselectedAlpha": "0.6",
+      "underlineHeight": 3,
+      "hoverBackground": "border",
+      "inactiveUnderlineColor": "accent",
+      "underlineColor": "accent",
+      "underlinedTabBackground": "background",
+      "underlinedTabForeground": "selectedText"
+    },
+    "FileColor": {
+      "Yellow": "#4d473a",
+      "Green": "#363f2f",
+      "Blue": "#2f344f",
+      "Violet": "#362748",
+      "Orange": "#4f3b31",
+      "Rose": "#462643",
+      "Gray": "#3d3d3d"
+    },
+    "Tree": {
+      "modifiedItemForeground": "accent",
+      "selectionInactiveBackground": "inactiveSelection",
+      "Selection.arc": 3
+    },
+    "Menu": {
+      "borderColor": "border"
+    },
+    "MenuItem": {
+      "acceleratorForeground": "infoText"
+    },
+    "Popup": {
+      "borderColor": "border"
+    },
+    "PopupMenuSeparator": {
+      "height": 13,
+      "stripeIndent": 6,
+      "stripeWidth": 1
+    },
+    "MenuBar": {
+      "borderColor": "border"
+    },
+    "NavBar": {
+      "borderColor": "border"
+    },
+    "Button": {
+      "arc": 2,
+      "disabledText": "infoText"
+    },
+    "TextField": {
+      "inactiveForeground": "infoText"
+    },
+    "StatusBar": {
+      "borderColor": "border"
+    },
+    "ToolWindow": {
+      "Header": {
+        "borderColor": "border",
+        "inactiveBackground": "background"
+      },
+      "Button": {
+        "hoverBackground": "inactiveSelection"
+      }
+    }
+  }
+}

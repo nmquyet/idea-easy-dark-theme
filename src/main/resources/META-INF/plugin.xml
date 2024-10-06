@@ -1,0 +1,12 @@
+<idea-plugin>
+  <id>com.qyengyn.easy-dark-theme</id>
+  <name>Easy Dark Theme</name>
+  <vendor email="minhquyet@gmail.com">qyengyn</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="com.qyengyn.easy-dark-theme" path="/easy_dark.theme.json"/>
+    <bundledColorScheme id="com.qyengyn.easy-dark-color-scheme" path="/easy_dark.xml"/>
+  </extensions>
+
+  <depends>com.intellij.modules.platform</depends>
+</idea-plugin>
