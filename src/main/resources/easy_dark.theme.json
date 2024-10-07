@@ -4,7 +4,8 @@
   "author": "qyengyn",
   "editorScheme": "Easy Dark",
   "colors": {
-    "background": "#282828",
+    "background": "#2e2d2c",
+    "darkerBackground": "#262525",
     "editor": "#32302F",
     "selection": "#094770",
     "text": "#BDAF93",
@@ -12,7 +13,7 @@
     "selectedText": "#EBDBB2",
     "inactiveSelection": "#383635",
     "accent": "#4B88C7",
-    "border": "#363433"
+    "border": "#403c3b"
   },
   "ui": {
     "*": {
@@ -22,6 +23,7 @@
       "selectionForeground": "selectedText",
       "separatorColor": "border",
       "infoForeground": "infoText",
+      "borderColor": "border",
       "arc": 8
     },
     "Editor": {
@@ -32,8 +34,7 @@
       "ContrastBorderColor": "border"
     },
     "DefaultTabs": {
-      "hoverBackground": "border",
-      "borderColor": "border"
+      "hoverBackground": "border"
     },
     "EditorTabs": {
       "unselectedBlend": "0.6",
@@ -60,38 +61,34 @@
       "Selection.arc": 3
     },
     "Menu": {
-      "borderColor": "border"
+      "background": "darkerBackground"
+    },
+    "PopupMenu": {
+      "background": "darkerBackground"
     },
     "MenuItem": {
+      "background": "darkerBackground",
       "acceleratorForeground": "infoText"
     },
     "Popup": {
-      "borderColor": "border"
+      "background": "darkerBackground"
     },
     "PopupMenuSeparator": {
       "height": 13,
       "stripeIndent": 6,
       "stripeWidth": 1
     },
-    "MenuBar": {
-      "borderColor": "border"
-    },
-    "NavBar": {
-      "borderColor": "border"
+    "ToolTip" : {
+      "background": "darkerBackground"
     },
     "Button": {
-      "arc": 2,
       "disabledText": "infoText"
     },
     "TextField": {
       "inactiveForeground": "infoText"
     },
-    "StatusBar": {
-      "borderColor": "border"
-    },
     "ToolWindow": {
       "Header": {
-        "borderColor": "border",
         "inactiveBackground": "background"
       },
       "Button": {
