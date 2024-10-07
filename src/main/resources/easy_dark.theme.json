@@ -60,6 +60,7 @@
       "selectionInactiveBackground": "inactiveSelection",
       "Selection.arc": 3
     },
+    "Notification.background": "darkerBackground",
     "Menu": {
       "background": "darkerBackground"
     },
