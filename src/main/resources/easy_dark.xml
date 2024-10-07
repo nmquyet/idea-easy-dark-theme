@@ -253,7 +253,7 @@
       <value>
         <option name="FOREGROUND" value="458588" />
         <option name="EFFECT_COLOR" value="458588" />
-        <option name="EFFECT_TYPE" value="1" />
+        <option name="EFFECT_TYPE" value="-1" />
       </value>
     </option>
     <option name="CUSP_BRACKETS_ATTR">
@@ -315,7 +315,7 @@
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="bdaf93" />
+        <option name="FOREGROUND" value="84a598" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
@@ -363,7 +363,7 @@
     </option>
     <option name="DEFAULT_ENTITY">
       <value>
-        <option name="FOREGROUND" value="84a598" />
+        <option name="FOREGROUND" value="fe8119" />
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
@@ -378,27 +378,26 @@
     </option>
     <option name="DEFAULT_HIGHLIGHTED_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="b8bb25" />
-        <option name="EFFECT_COLOR" value="b8bb25" />
+        <option name="EFFECT_COLOR" value="458588" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="ebdbb2" />
+        <option name="FOREGROUND" value="decfa9" />
         <option name="BACKGROUND" value="32302f" />
       </value>
     </option>
     <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="fb4934" />
+        <option name="FOREGROUND" value="f85861" />
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
         <option name="FOREGROUND" value="ad3030" />
-        <option name="EFFECT_COLOR" value="a73d43" />
+        <option name="EFFECT_COLOR" value="ad3030" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -435,12 +434,12 @@
     </option>
     <option name="DEFAULT_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="84a598" />
+        <option name="FOREGROUND" value="fe8119" />
       </value>
     </option>
     <option name="DEFAULT_PARENTHS">
       <value>
-        <option name="FOREGROUND" value="b16286" />
+        <option name="FOREGROUND" value="318d7f" />
       </value>
     </option>
     <option name="DEFAULT_PREDEFINED_SYMBOL">
@@ -542,7 +541,7 @@
     <option name="FOLDED_TEXT_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="ebdbb2" />
-        <option name="BACKGROUND" value="415940" />
+        <option name="BACKGROUND" value="535d51" />
       </value>
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
@@ -708,7 +707,8 @@
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="4c4745" />
+        <option name="FOREGROUND" value="ebdbb2" />
+        <option name="BACKGROUND" value="665f5d" />
       </value>
     </option>
     <option name="IGNORE.COMMENT">
@@ -859,7 +859,7 @@
     </option>
     <option name="METHOD_DECLARATION_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="8ec07d" />
+        <option name="FOREGROUND" value="7db66a" />
       </value>
     </option>
     <option name="NOT_TOP_FRAME_ATTRIBUTES">
@@ -1262,6 +1262,7 @@
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
+        <option name="FOREGROUND" value="ebdbb2" />
         <option name="BACKGROUND" value="427b58" />
       </value>
     </option>
@@ -1274,8 +1275,8 @@
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="f44747" />
-        <option name="EFFECT_COLOR" value="f44747" />
+        <option name="FOREGROUND" value="942929" />
+        <option name="EFFECT_COLOR" value="fb4934" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
