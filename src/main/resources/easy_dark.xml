@@ -21,11 +21,7 @@
     <option name="DIAGRAM_REALIZATION_EDGE" value="fabd2f" />
     <option name="DOCUMENTATION_COLOR" value="282828" />
     <option name="EDITOR_GUTTER_BACKGROUND" value="2e2e2e" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="7a725c" />
-    <option name="FILESTATUS_MODIFIED" value="458588" />
-    <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="458588" />
-    <option name="FILESTATUS_NOT_CHANGED_RECURSIVE" value="458588" />
-    <option name="FILESTATUS_modifiedOutside" value="458588" />
+    <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="808080" />
     <option name="GUTTER_BACKGROUND" value="202124" />
     <option name="HTML_TAG_TREE_LEVEL0" value="cc241d" />
     <option name="HTML_TAG_TREE_LEVEL1" value="d79921" />
