@@ -21,6 +21,9 @@
     <option name="DIAGRAM_REALIZATION_EDGE" value="fabd2f" />
     <option name="DOCUMENTATION_COLOR" value="282828" />
     <option name="EDITOR_GUTTER_BACKGROUND" value="2e2e2e" />
+    <option name="FILESTATUS_DELETED" value="3d3d3d" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="3d3d3d" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="808080" />
     <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="808080" />
     <option name="GUTTER_BACKGROUND" value="202124" />
     <option name="HTML_TAG_TREE_LEVEL0" value="cc241d" />
@@ -253,7 +256,7 @@
       <value>
         <option name="FOREGROUND" value="458588" />
         <option name="EFFECT_COLOR" value="458588" />
-        <option name="EFFECT_TYPE" value="-1" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="CUSP_BRACKETS_ATTR">
