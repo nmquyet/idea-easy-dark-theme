@@ -13,16 +13,27 @@ import com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl;
 import com.intellij.psi.impl.source.tree.JavaElementType;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class JavaExtendedKeywordAnnotator implements Annotator {
-    private static final Set<String> constant_keywords = new HashSet<>(){{
-        add("null");
-        add("true");
-        add("false");
-        add("void");
+    private static final HashMap<String, String> KEYWORDS = new HashMap<>(){{
+        put("null", "JAVA_CONSTANT_KEYWORD");
+        put("true", "JAVA_CONSTANT_KEYWORD");
+        put("false", "JAVA_CONSTANT_KEYWORD");
+        put("void", "JAVA_CONSTANT_KEYWORD");
+
+        put("boolean", "JAVA_PRIMITIVE_KEYWORD");
+        put("char", "JAVA_PRIMITIVE_KEYWORD");
+        put("byte", "JAVA_PRIMITIVE_KEYWORD");
+        put("short", "JAVA_PRIMITIVE_KEYWORD");
+        put("int", "JAVA_PRIMITIVE_KEYWORD");
+        put("long", "JAVA_PRIMITIVE_KEYWORD");
+        put("double", "JAVA_PRIMITIVE_KEYWORD");
+        put("float", "JAVA_PRIMITIVE_KEYWORD");
     }};
+
     @Override
     public void annotate(@NotNull PsiElement psiElement, @NotNull AnnotationHolder annotationHolder) {
         annotateKeyword(psiElement, annotationHolder);
@@ -34,13 +45,15 @@ public class JavaExtendedKeywordAnnotator implements Annotator {
             return;
         }
 
-        String value = javaToken.getText();
-        if (value == null || !constant_keywords.contains(value)) {
+        String keyword = javaToken.getText();
+        if (keyword == null || !KEYWORDS.containsKey(keyword)) {
             return;
         }
-
         annotationHolder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
-            .textAttributes(TextAttributesKey.createTextAttributesKey("JAVA_ADDTIONAL_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD))
+            .textAttributes(TextAttributesKey.createTextAttributesKey(
+                    KEYWORDS.get(keyword),
+                    DefaultLanguageHighlighterColors.KEYWORD)
+            )
             .create();
     }
 
