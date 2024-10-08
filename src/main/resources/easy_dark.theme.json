@@ -4,16 +4,19 @@
   "author": "qyengyn",
   "editorScheme": "Easy Dark",
   "colors": {
-    "background": "#2e2d2c",
+    "background": "#292828",
     "darkerBackground": "#262525",
     "editor": "#32302F",
     "selection": "#094770",
     "text": "#BDAF93",
+    "textHighlight": "#CEBE9C",
     "infoText": "#807766",
     "selectedText": "#EBDBB2",
     "inactiveSelection": "#383635",
     "accent": "#4B88C7",
-    "border": "#403c3b"
+    "borderLow": "#332f2c",
+    "borderNeutral": "#3d3835",
+    "border": "#4d4744"
   },
   "ui": {
     "*": {
@@ -27,16 +30,18 @@
       "arc": 8
     },
     "Editor": {
+      "Toolbar.borderColor": "borderNeutral",
       "background": "editor"
     },
     "Borders": {
-      "color": "border",
+      "color": "borderLow",
       "ContrastBorderColor": "border"
     },
     "DefaultTabs": {
       "hoverBackground": "border"
     },
     "EditorTabs": {
+      "borderColor": "borderLow",
       "unselectedBlend": "0.6",
       "unselectedAlpha": "0.6",
       "underlineHeight": 3,
@@ -56,11 +61,13 @@
       "Gray": "#3d3d3d"
     },
     "Tree": {
+      "foreground": "textHighlight",
       "modifiedItemForeground": "accent",
       "selectionInactiveBackground": "inactiveSelection",
       "Selection.arc": 3
     },
     "Menu": {
+      "separatorColor": "borderNeutral",
       "background": "darkerBackground"
     },
     "PopupMenu": {
@@ -78,6 +85,9 @@
       "stripeIndent": 6,
       "stripeWidth": 1
     },
+    "Component": {
+      "borderColor": "borderNeutral"
+    },
     "ToolTip" : {
       "background": "darkerBackground"
     },
@@ -89,6 +99,7 @@
     },
     "ToolWindow": {
       "Header": {
+        "borderColor": "borderNeutral",
         "inactiveBackground": "background"
       },
       "Button": {
