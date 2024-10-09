@@ -13,10 +13,11 @@
     "infoText": "#807766",
     "selectedText": "#EBDBB2",
     "inactiveSelection": "#383635",
-    "accent": "#4B88C7",
+    "accent": "#3372ed",
     "borderLow": "#332f2c",
     "borderNeutral": "#3d3835",
-    "border": "#4d4744"
+    "border": "#4d4744",
+    "notification": "#45494A"
   },
   "ui": {
     "*": {
@@ -37,8 +38,12 @@
       "color": "borderLow",
       "ContrastBorderColor": "border"
     },
+    "TabbedPane": {
+      "underlineColor": "accent"
+    },
     "DefaultTabs": {
-      "hoverBackground": "border"
+      "hoverBackground": "border",
+      "underlineColor": "accent"
     },
     "EditorTabs": {
       "borderColor": "borderLow",
@@ -47,7 +52,6 @@
       "underlineHeight": 3,
       "hoverBackground": "border",
       "inactiveUnderlineColor": "accent",
-      "underlineColor": "accent",
       "underlinedTabBackground": "background",
       "underlinedTabForeground": "selectedText"
     },
@@ -63,12 +67,14 @@
     "Tree": {
       "foreground": "textHighlight",
       "modifiedItemForeground": "accent",
+      "selectionBackground": "selectionBackground",
       "selectionInactiveBackground": "inactiveSelection",
       "Selection.arc": 3
     },
     "Menu": {
       "separatorColor": "borderNeutral",
-      "background": "darkerBackground"
+      "background": "darkerBackground",
+      "selectionBackground": "selection"
     },
     "PopupMenu": {
       "background": "darkerBackground"
@@ -89,7 +95,20 @@
       "borderColor": "borderNeutral"
     },
     "ToolTip" : {
-      "background": "darkerBackground"
+      "background": "darkerBackground",
+      "paintBorder": true,
+      "borderColor": "#1c1c1c"
+    },
+    "Notification": {
+      "background": "#45494A",
+      "errorBackground": "#593d41",
+      "borderColor": "#45494A",
+      "ToolWindow": {
+        "informativeBackground": "#45494A",
+        "warningBackground": "#594321",
+        "errorBackground": "#593d41"
+      }
+
     },
     "Button": {
       "disabledText": "infoText"
