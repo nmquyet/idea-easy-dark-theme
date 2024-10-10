@@ -14,8 +14,6 @@ import com.intellij.psi.impl.source.tree.JavaElementType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 public class JavaExtendedKeywordAnnotator implements Annotator {
     private static final HashMap<String, String> KEYWORDS = new HashMap<>(){{
@@ -58,24 +56,20 @@ public class JavaExtendedKeywordAnnotator implements Annotator {
     }
 
     private void annotateImportPackageName(@NotNull PsiElement psiElement, @NotNull AnnotationHolder annotationHolder) {
-        if (!(psiElement instanceof PsiJavaCodeReferenceElementImpl codeReferenceElement)) {
+        if (!(psiElement instanceof PsiJavaCodeReferenceElementImpl codeReferenceElement))
             return;
-        }
-
-        if (codeReferenceElement.getElementType() != JavaElementType.JAVA_CODE_REFERENCE) {
+        if (codeReferenceElement.getElementType() != JavaElementType.JAVA_CODE_REFERENCE)
             return;
-        }
-
-        if (codeReferenceElement.getParent() == null || !(codeReferenceElement.getParent() instanceof PsiJavaCodeReferenceElementImpl)) {
+        if (codeReferenceElement.getParent() == null || !(codeReferenceElement.getParent() instanceof PsiJavaCodeReferenceElementImpl))
             return;
-        }
-
-        if (codeReferenceElement.getParent().getParent() == null || !(codeReferenceElement.getParent().getParent() instanceof PsiImportStatement)) {
+        if (codeReferenceElement.getParent().getParent() == null || !(codeReferenceElement.getParent().getParent() instanceof PsiImportStatement))
             return;
-        }
 
         annotationHolder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
-            .textAttributes(TextAttributesKey.createTextAttributesKey("JAVA_PACKAGE_REFERENCE", HighlighterColors.TEXT))
+            .textAttributes(TextAttributesKey.createTextAttributesKey(
+                "JAVA_PACKAGE_REFERENCE",
+                HighlighterColors.TEXT)
+            )
             .create();
     }
 }

@@ -1374,11 +1374,7 @@
         <option name="FOREGROUND" value="FE8119"/>
       </value>
     </option>
-    <option name="JAVA_PACKAGE_REFERENCE">
-      <value>
-        <option name="FOREGROUND" value="TEXT"/>
-      </value>
-    </option>
+    <option name="JAVA_PACKAGE_REFERENCE" baseAttributes="TEXT"/>
 
   </attributes>
 </scheme>
