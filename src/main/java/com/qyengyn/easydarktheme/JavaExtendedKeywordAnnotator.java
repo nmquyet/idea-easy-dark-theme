@@ -20,7 +20,6 @@ public class JavaExtendedKeywordAnnotator implements Annotator {
         put("null", "JAVA_CONSTANT_KEYWORD");
         put("true", "JAVA_CONSTANT_KEYWORD");
         put("false", "JAVA_CONSTANT_KEYWORD");
-        put("void", "JAVA_CONSTANT_KEYWORD");
 
         put("boolean", "JAVA_PRIMITIVE_KEYWORD");
         put("char", "JAVA_PRIMITIVE_KEYWORD");

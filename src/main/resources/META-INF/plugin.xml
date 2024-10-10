@@ -6,6 +6,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <themeProvider id="com.qyengyn.easy-dark-theme" path="/easy_dark.theme.json"/>
     <bundledColorScheme id="com.qyengyn.easy-dark-color-scheme" path="/easy_dark.xml"/>
+    <bundledColorScheme id="com.qyengyn.easy-dark-alternate-color-scheme" path="/easy_dark_alternate.xml"/>
     <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.JavaExtendedKeywordAnnotator"/>
   </extensions>
 
