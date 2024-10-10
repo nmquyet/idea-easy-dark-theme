@@ -11,6 +11,7 @@
     "text": "#BDAF93",
     "textHighlight": "#CEBE9C",
     "infoText": "#807766",
+    "disabledText": "#5d564a",
     "selectedText": "#EBDBB2",
     "inactiveSelection": "#383635",
     "accent": "#3372ed",
@@ -18,6 +19,13 @@
     "borderNeutral": "#3d3835",
     "border": "#4d4744",
     "notification": "#45494A"
+  },
+  "icons": {
+    "ColorPalette": {
+      "Tree.iconColor": "#747A7F",
+      "Gray.Stroke": "#a69b83",
+      "Gray.SecondaryStroke": "#a69b83"
+    }
   },
   "ui": {
     "*": {
@@ -68,7 +76,8 @@
     },
     "MenuItem": {
       "background": "darkerBackground",
-      "acceleratorForeground": "infoText"
+      "acceleratorForeground": "infoText",
+      "disabledForeground": "disabledText"
     },
     "Popup": {
       "background": "darkerBackground"
