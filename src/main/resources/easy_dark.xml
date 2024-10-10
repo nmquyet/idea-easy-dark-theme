@@ -742,7 +742,7 @@
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="694879" />
+        <option name="BACKGROUND" value="574E59" />
         <option name="ERROR_STRIPE_COLOR" value="d451ff" />
       </value>
     </option>
@@ -913,13 +913,12 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="0" />
-        <option name="BACKGROUND" value="9d9d9d" />
+        <option name="BACKGROUND" value="574E59" />
       </value>
     </option>
     <option name="MATCHED_TAG_NAME">
       <value>
-        <option name="BACKGROUND" value="4c4745" />
+        <option name="BACKGROUND" value="574E59" />
       </value>
     </option>
     <option name="NOT_TOP_FRAME_ATTRIBUTES">
