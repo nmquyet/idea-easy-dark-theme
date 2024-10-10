@@ -110,13 +110,13 @@
       "ContrastBorderColor": "border"
     },
     "FileColor": {
-      "Yellow": "#4d473a",
-      "Green": "#363f2f",
-      "Blue": "#2f344f",
-      "Violet": "#362748",
-      "Orange": "#4f3b31",
-      "Rose": "#462643",
-      "Gray": "#3d3d3d"
+      "Yellow": "#332f2c",
+      "Green": "#2c3326",
+      "Blue": "#1e2133",
+      "Violet": "#261c33",
+      "Orange": "#332620",
+      "Rose": "#331c31",
+      "Gray": "#333333"
     },
     "Button": {
       "disabledText": "infoText"
