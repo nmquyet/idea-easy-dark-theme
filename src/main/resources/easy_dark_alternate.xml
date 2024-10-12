@@ -7,7 +7,7 @@
         <option name="ADDED_LINES_COLOR" value="628556" />
         <option name="ANNOTATIONS_COLOR" value="0" />
         <option name="CARET_COLOR" value="decfa9" />
-        <option name="CARET_ROW_COLOR" value="403e3d" />
+        <option name="CARET_ROW_COLOR" value="3b3938" />
         <option name="CONSOLE_BACKGROUND_KEY" value="" />
         <option name="DELETED_LINES_COLOR" value="888888" />
         <option name="DIAGRAM_ANNOTATION_EDGE" value="d79921" />
@@ -58,8 +58,7 @@
         <option name="RIGHT_MARGIN_COLOR" value="3b392e" />
         <option name="SELECTED_INDENT_GUIDE" value="485159" />
         <option name="SELECTED_TEARLINE_COLOR" value="8ec07c" />
-        <option name="SELECTION_BACKGROUND" value="3372ed" />
-        <option name="SELECTION_FOREGROUND" value="ebdbb2" />
+        <option name="SELECTION_BACKGROUND" value="d456d" />
         <option name="SEPARATOR_ABOVE_COLOR" value="26282d" />
         <option name="SEPARATOR_BELOW_COLOR" value="26282d" />
         <option name="STICKY_LINES_BORDER_COLOR" value="" />
@@ -94,7 +93,7 @@
         <option name="VCS_ANNOTATIONS_COLOR_3" value="9bc1bc" />
         <option name="VCS_ANNOTATIONS_COLOR_4" value="5ca4a9" />
         <option name="VCS_ANNOTATIONS_COLOR_5" value="e6ebe0" />
-        <option name="VISUAL_INDENT_GUIDE" value="333333" />
+        <option name="VISUAL_INDENT_GUIDE" value="3b392e" />
         <option name="WHITESPACES" value="333541" />
         <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="79a9b7" />
     </colors>
@@ -153,7 +152,7 @@
         </option>
         <option name="BREAKPOINT_ATTRIBUTES">
             <value>
-                <option name="BACKGROUND" value="3a2323" />
+                <option name="BACKGROUND" value="674343" />
             </value>
         </option>
         <option name="CODE_LENS_BORDER_COLOR">
@@ -301,13 +300,19 @@
         </option>
         <option name="DEBUGGER_INLINED_VALUES">
             <value>
-                <option name="FOREGROUND" value="928374" />
+                <option name="FOREGROUND" value="6c6156" />
                 <option name="FONT_TYPE" value="2" />
             </value>
         </option>
         <option name="DEBUGGER_INLINED_VALUES_EXECUTION_LINE">
             <value>
                 <option name="FOREGROUND" value="83a598" />
+                <option name="FONT_TYPE" value="2" />
+            </value>
+        </option>
+        <option name="DEBUGGER_INLINED_VALUES_MODIFIED">
+            <value>
+                <option name="FOREGROUND" value="4d6880" />
                 <option name="FONT_TYPE" value="2" />
             </value>
         </option>
@@ -329,7 +334,7 @@
         </option>
         <option name="DEFAULT_CLASS_NAME">
             <value>
-                <option name="FOREGROUND" value="e08969" />
+                <option name="FOREGROUND" value="d56543" />
             </value>
         </option>
         <option name="DEFAULT_CLASS_REFERENCE">
@@ -398,7 +403,7 @@
         </option>
         <option name="DEFAULT_IDENTIFIER">
             <value>
-                <option name="FOREGROUND" value="d1bf90" />
+                <option name="FOREGROUND" value="bdaf93" />
             </value>
         </option>
         <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
@@ -409,7 +414,7 @@
         </option>
         <option name="DEFAULT_INTERFACE_NAME">
             <value>
-                <option name="FOREGROUND" value="e08969" />
+                <option name="FOREGROUND" value="e17753" />
             </value>
         </option>
         <option name="DEFAULT_INVALID_STRING_ESCAPE">
@@ -581,7 +586,7 @@
         </option>
         <option name="EXECUTIONPOINT_ATTRIBUTES">
             <value>
-                <option name="BACKGROUND" value="43740" />
+                <option name="BACKGROUND" value="4d604b" />
             </value>
         </option>
         <option name="FOLDED_TEXT_ATTRIBUTES">
@@ -751,7 +756,7 @@
         </option>
         <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
             <value>
-                <option name="BACKGROUND" value="583d7a" />
+                <option name="BACKGROUND" value="564a2b" />
                 <option name="ERROR_STRIPE_COLOR" value="6b4a94" />
             </value>
         </option>
@@ -929,7 +934,7 @@
         </option>
         <option name="NOT_TOP_FRAME_ATTRIBUTES">
             <value>
-                <option name="BACKGROUND" value="4b4b4b" />
+                <option name="BACKGROUND" value="374036" />
             </value>
         </option>
         <option name="NOT_USED_ELEMENT_ATTRIBUTES">
@@ -1324,7 +1329,7 @@
         </option>
         <option name="WARNING_ATTRIBUTES">
             <value>
-                <option name="BACKGROUND" value="565027" />
+                <option name="EFFECT_COLOR" value="cd9731" />
                 <option name="ERROR_STRIPE_COLOR" value="cd9731" />
                 <option name="EFFECT_TYPE" value="2" />
             </value>

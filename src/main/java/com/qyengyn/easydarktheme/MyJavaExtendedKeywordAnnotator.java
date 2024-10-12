@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
-public class JavaExtendedKeywordAnnotator implements Annotator {
+public class MyJavaExtendedKeywordAnnotator implements Annotator {
     private static final HashMap<String, String> KEYWORDS = new HashMap<>(){{
         put("null", "JAVA_CONSTANT_KEYWORD");
         put("true", "JAVA_CONSTANT_KEYWORD");
