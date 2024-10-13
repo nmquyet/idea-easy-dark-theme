@@ -42,15 +42,15 @@
       "underlineColor": "accent"
     },
     "DefaultTabs": {
-      "hoverBackground": "border",
+      "borderColor": "borderNeutral",
+      "hoverBackground": "borderLow",
       "underlineColor": "accent"
     },
     "EditorTabs": {
-      "borderColor": "borderLow",
+      "borderColor": "borderNeutral",
       "unselectedBlend": "0.6",
       "unselectedAlpha": "0.6",
       "underlineHeight": 3,
-      "hoverBackground": "borderLow",
       "underlinedTabBackground": "background",
       "underlinedTabForeground": "selectedText"
     },

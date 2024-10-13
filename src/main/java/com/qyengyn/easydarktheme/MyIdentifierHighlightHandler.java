@@ -19,7 +19,10 @@ import com.intellij.openapi.editor.ex.util.LexerEditorHighlighter;
 import com.intellij.openapi.editor.highlighter.EditorHighlighter;
 import com.intellij.openapi.editor.highlighter.HighlighterIterator;
 import com.intellij.openapi.editor.impl.DocumentMarkupModel;
-import com.intellij.openapi.editor.markup.*;
+import com.intellij.openapi.editor.markup.AttributesFlyweight;
+import com.intellij.openapi.editor.markup.MarkupModel;
+import com.intellij.openapi.editor.markup.RangeHighlighter;
+import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorAndFontDescriptorsProvider;
@@ -42,8 +45,10 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
 import java.util.List;
+import java.util.*;
+
+import static com.intellij.codeInsight.daemon.impl.HighlightInfoType.*;
 
 
 @SuppressWarnings({"UnstableApiUsage", "KotlinInternalInJava", "UseJBColor"})
@@ -77,8 +82,8 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
         }
 
         EditorColorsScheme colorsScheme = editor.getColorsScheme();
-        this.defaultReadAttribute = colorsScheme.getAttributes(HighlightInfoType.ELEMENT_UNDER_CARET_READ.getAttributesKey());
-        this.defaultWriteAttribute = colorsScheme.getAttributes(HighlightInfoType.ELEMENT_UNDER_CARET_WRITE.getAttributesKey());
+        this.defaultReadAttribute = colorsScheme.getAttributes(ELEMENT_UNDER_CARET_READ.getAttributesKey());
+        this.defaultWriteAttribute = colorsScheme.getAttributes(ELEMENT_UNDER_CARET_WRITE.getAttributesKey());
 
         if (keyMap.isEmpty()) {
             this.myTargetBgColor = null;
@@ -95,7 +100,11 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
 
             if (attribute != null && attribute.getForegroundColor() != null) {
                 Color detectedFgColor = attribute.getForegroundColor();
-                this.myTargetBgColor = new Color(detectedFgColor.getRed(), detectedFgColor.getGreen(), detectedFgColor.getBlue(), 60);
+                this.myTargetBgColor = new Color(
+                        detectedFgColor.getRed(),
+                        detectedFgColor.getGreen(),
+                        detectedFgColor.getBlue(),
+                        Integer.getInteger("easydarktheme.highlight.opacity", 60));
             } else {
                 this.myTargetBgColor = null;
             }
@@ -124,13 +133,16 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
 
     private void collectCodeBlockMarkerRanges() {
         InjectedLanguageManager manager = InjectedLanguageManager.getInstance(this.myFile.getProject());
-        PsiElement contextElement = this.myFile.findElementAt(TargetElementUtil.adjustOffset(this.myFile, this.myEditor.getDocument(), this.myEditor.getCaretModel().getOffset()));
+        PsiElement contextElement = this.myFile.findElementAt(
+                TargetElementUtil.adjustOffset(
+                        this.myFile,
+                        this.myEditor.getDocument(),
+                        this.myEditor.getCaretModel().getOffset())
+        );
         if (contextElement != null) {
-
             for (TextRange range : CodeBlockSupportHandler.findMarkersRanges(contextElement)) {
                 this.myCodeBlockMarkerRanges.add(manager.injectedToHost(contextElement, range));
             }
-
         }
     }
 
@@ -165,8 +177,7 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
             List<HighlightInfo> infos = !virtSpace && !this.isCaretOverCollapsedFoldRegion()
                     ? this.createHighlightInfos()
                     : Collections.emptyList();
-            PsiFile hostFile = InjectedLanguageManager
-                    .getInstance(this.myFile.getProject())
+            PsiFile hostFile = InjectedLanguageManager.getInstance(this.myFile.getProject())
                     .getTopLevelFile(this.myFile);
             BackgroundUpdateHighlightersUtil.setHighlightersToEditor(
                     hostFile.getProject(),
@@ -196,39 +207,54 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
 
         List<HighlightInfo> result = new ArrayList<>(myReadAccessRanges.size() + myWriteAccessRanges.size() + myCodeBlockMarkerRanges.size());
         for (TextRange range: myReadAccessRanges) {
-            result.add(createHighlightInfo(range, HighlightInfoType.ELEMENT_UNDER_CARET_READ, existingMarkupTooltips));
+            result.add(createHighlightInfo(range, ELEMENT_UNDER_CARET_READ, existingMarkupTooltips));
         }
         for (TextRange range: myWriteAccessRanges) {
-            result.add(createHighlightInfo(range, HighlightInfoType.ELEMENT_UNDER_CARET_WRITE, existingMarkupTooltips));
+            result.add(createHighlightInfo(range, ELEMENT_UNDER_CARET_WRITE, existingMarkupTooltips));
         }
         if (CodeInsightSettings.getInstance().HIGHLIGHT_BRACES) {
-            myCodeBlockMarkerRanges.forEach(range -> result.add(createHighlightInfo(range, HighlightInfoType.ELEMENT_UNDER_CARET_STRUCTURAL, existingMarkupTooltips)));
+            myCodeBlockMarkerRanges.forEach(range ->
+                    result.add(createHighlightInfo(range, ELEMENT_UNDER_CARET_STRUCTURAL, existingMarkupTooltips)));
         }
 
         return result;
     }
 
-    private @NotNull HighlightInfo createHighlightInfo(@NotNull TextRange range, @NotNull HighlightInfoType type, @NotNull Set<Pair<Object, TextRange>> existingMarkupTooltips) {
+    private @NotNull HighlightInfo createHighlightInfo(@NotNull TextRange range, @NotNull HighlightInfoType type,
+                                                       @NotNull Set<Pair<Object, TextRange>> existingMarkupTooltips) {
         int start = range.getStartOffset();
-        String tooltip = start <= myEditor.getDocument().getTextLength() ? HighlightHandlerBase.getLineTextErrorStripeTooltip(myEditor.getDocument(), start, false) : null;
-        String unescapedTooltip = existingMarkupTooltips.contains(new Pair<Object, TextRange>(tooltip, range)) ? null : tooltip;
+        String tooltip = start <= myEditor.getDocument().getTextLength()
+                ? HighlightHandlerBase.getLineTextErrorStripeTooltip(myEditor.getDocument(), start, false)
+                : null;
+        String unescapedTooltip = existingMarkupTooltips.contains(new Pair<Object, TextRange>(tooltip, range))
+                ? null
+                : tooltip;
         HighlightInfo.Builder builder = HighlightInfo.newHighlightInfo(type).range(range);
         if (unescapedTooltip != null) {
             builder.unescapedToolTip(unescapedTooltip);
         }
         if (this.myTargetBgColor != null) {
-            AttributesFlyweight textAttributes =  type == HighlightInfoType.ELEMENT_UNDER_CARET_READ
-                    ? AttributesFlyweight.create(null, this.myTargetBgColor, 0, null, null, this.defaultReadAttribute.getErrorStripeColor())
-                    : AttributesFlyweight.create(null, this.defaultWriteAttribute.getBackgroundColor(), 0, null, null, this.defaultWriteAttribute.getErrorStripeColor());
+            AttributesFlyweight textAttributes =  type == ELEMENT_UNDER_CARET_READ
+                    ? AttributesFlyweight.create(null,
+                                                 this.myTargetBgColor,
+                                                 Font.PLAIN,
+                                                 null,
+                                                 null,
+                                                 this.defaultReadAttribute.getErrorStripeColor())
+                    : AttributesFlyweight.create(null,
+                                                 this.defaultWriteAttribute.getBackgroundColor(),
+                                                 Font.PLAIN,
+                                                 null,
+                                                 null,
+                                                 this.defaultWriteAttribute.getErrorStripeColor());
             builder.textAttributes(TextAttributes.fromFlyweight(textAttributes));
         }
-
         return builder.createUnconditionally();
     }
 
     @Override
-    protected void selectTargets(@NotNull List<? extends PsiElement> list, @NotNull Consumer<? super List<? extends PsiElement>> consumer) {
-
+    protected void selectTargets(@NotNull List<? extends PsiElement> list,
+                                 @NotNull Consumer<? super List<? extends PsiElement>> consumer) {
     }
 
     private int getId() {
