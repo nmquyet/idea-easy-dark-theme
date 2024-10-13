@@ -8,7 +8,7 @@
     <bundledColorScheme id="com.qyengyn.easy-dark-color-scheme" path="/easy_dark.xml"/>
     <bundledColorScheme id="com.qyengyn.easy-dark-alternate-color-scheme" path="/easy_dark_alternate.xml"/>
     <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.MyJavaExtendedKeywordAnnotator"/>
-    <highlightUsagesHandlerFactory implementation="com.qyengyn.easydarktheme.MyHighlightUsageHandlerFactory"/>
+    <highlightUsagesHandlerFactory implementation="com.qyengyn.easydarktheme.MyIdentifierHighlightHandlerFactory"/>
   </extensions>
 
   <depends>com.intellij.modules.platform</depends>

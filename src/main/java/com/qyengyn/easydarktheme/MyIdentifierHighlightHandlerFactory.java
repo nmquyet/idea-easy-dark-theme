@@ -8,10 +8,10 @@ import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class MyHighlightUsageHandlerFactory extends HighlightUsagesHandlerFactoryBase {
+public class MyIdentifierHighlightHandlerFactory extends HighlightUsagesHandlerFactoryBase {
 
     @Override
     public @Nullable HighlightUsagesHandlerBase<PsiElement> createHighlightUsagesHandler(@NotNull Editor editor, @NotNull PsiFile file, @NotNull PsiElement element) {
-        return new MyHighlightUsageHandler(editor, file, element);
+        return new MyIdentifierHighlightHandler(editor, file, element);
     }
 }

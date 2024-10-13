@@ -27,13 +27,10 @@ import com.intellij.openapi.options.colors.ColorSettingsPages;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.util.ProperTextRange;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.util.TextRange;
-import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.impl.source.tree.injected.InjectedLanguageEditorUtil;
 import com.intellij.util.AstLoadingFilter;
 import com.intellij.util.Consumer;
 import com.intellij.util.ObjectUtils;
@@ -50,7 +47,7 @@ import java.util.List;
 
 
 @SuppressWarnings({"UnstableApiUsage", "KotlinInternalInJava", "UseJBColor"})
-public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiElement> {
+public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<PsiElement> {
 
     private final Collection<TextRange> myReadAccessRanges;
     private final Collection<TextRange> myWriteAccessRanges;
@@ -58,12 +55,11 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
     private final int myCaretOffset;
     private static volatile int id;
 
-    private final @Nullable Color myTargetFgColor;
     private final @Nullable Color myTargetBgColor;
     private final TextAttributes defaultReadAttribute;
     private final TextAttributes defaultWriteAttribute;
 
-    protected MyHighlightUsageHandler(@NotNull Editor editor, @NotNull PsiFile file, PsiElement target) {
+    protected MyIdentifierHighlightHandler(@NotNull Editor editor, @NotNull PsiFile file, PsiElement target) {
         super(editor, file);
         this.myCaretOffset = editor.getCaretModel().getOffset();
         this.myReadAccessRanges =  Collections.synchronizedSet(new LinkedHashSet<>());
@@ -85,10 +81,8 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
         this.defaultWriteAttribute = colorsScheme.getAttributes(HighlightInfoType.ELEMENT_UNDER_CARET_WRITE.getAttributesKey());
 
         if (keyMap.isEmpty()) {
-            this.myTargetFgColor = null;
             this.myTargetBgColor = null;
         } else {
-
             ArrayList<Pair<ColorAndFontDescriptorsProvider, AttributesDescriptor>> attrs = new ArrayList<>(keyMap.values());
             attrs.sort(Comparator.comparingInt(o -> -Math.abs(o.second.getKey().getExternalName().length())));
 
@@ -100,10 +94,9 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
                     .orElse(null);
 
             if (attribute != null && attribute.getForegroundColor() != null) {
-                this.myTargetFgColor = attribute.getForegroundColor();
-                this.myTargetBgColor = new Color(this.myTargetFgColor.getRed(), this.myTargetFgColor.getGreen(), this.myTargetFgColor.getBlue(), 60);
+                Color detectedFgColor = attribute.getForegroundColor();
+                this.myTargetBgColor = new Color(detectedFgColor.getRed(), detectedFgColor.getGreen(), detectedFgColor.getBlue(), 60);
             } else {
-                this.myTargetFgColor = null;
                 this.myTargetBgColor = null;
             }
         }
@@ -124,9 +117,8 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
         collectCodeBlockMarkerRanges();
 
         Collection<Symbol> targetSymbols = TargetsKt.targetSymbols(this.myFile, this.myCaretOffset);
-
         for (Symbol symbol : targetSymbols) {
-            this.computeUsageRanges(symbol);
+            computeUsageRanges(symbol);
         }
     }
 
@@ -162,61 +154,38 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
         }
     }
 
+    @Override
     public boolean highlightReferences() {
         if (this.myReadAccessRanges.isEmpty() && this.myWriteAccessRanges.isEmpty() && this.myCodeBlockMarkerRanges.isEmpty()) {
-            return false;
+            IdentifierHighlighterPass.clearMyHighlights(this.myEditor.getDocument(), this.myEditor.getProject());
+            return true;
         }
-
-        HighlightingSessionImpl.runInsideHighlightingSession(this.myFile, this.myEditor.getColorsScheme(), ProperTextRange.create(this.myFile.getTextRange()), false, session -> {
-            if (!this.myEditor.isDisposed()) {
-                boolean virtSpace = EditorUtil.isCaretInVirtualSpace(this.myEditor);
-                List<HighlightInfo> infos = !virtSpace && !this.isCaretOverCollapsedFoldRegion()
-                        ? this.getHighlights()
-                        : Collections.emptyList();
-                PsiFile hostFile = InjectedLanguageManager
-                        .getInstance(this.myFile.getProject())
-                        .getTopLevelFile(this.myFile);
-                Editor hostEditor = InjectedLanguageEditorUtil.getTopLevelEditor(this.myEditor);
-                try {
-                    setHighlightersInRange().invoke(
-                            BackgroundUpdateHighlightersUtil.class,
-                            hostFile.getTextRange(),
-                            infos,
-                            (MarkupModelEx) hostEditor.getMarkupModel(),
-                            this.getId(),
-                            session);
-                } catch (IllegalAccessException | InvocationTargetException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-
+        if (!this.myEditor.isDisposed()) {
+            boolean virtSpace = EditorUtil.isCaretInVirtualSpace(this.myEditor);
+            List<HighlightInfo> infos = !virtSpace && !this.isCaretOverCollapsedFoldRegion()
+                    ? this.createHighlightInfos()
+                    : Collections.emptyList();
+            PsiFile hostFile = InjectedLanguageManager
+                    .getInstance(this.myFile.getProject())
+                    .getTopLevelFile(this.myFile);
+            BackgroundUpdateHighlightersUtil.setHighlightersToEditor(
+                    hostFile.getProject(),
+                    hostFile,
+                    hostFile.getFileDocument(),
+                    hostFile.getTextRange().getStartOffset(),
+                    hostFile.getTextRange().getEndOffset(),
+                    infos,
+                    this.getId());
+        }
 
         return false;
-    }
-
-    private static @NotNull Method setHighlightersInRange() {
-        Method setHighlightersInRange = null;
-        try {
-            setHighlightersInRange = BackgroundUpdateHighlightersUtil.class.getDeclaredMethod(
-                    "setHighlightersInRange",
-                    TextRange.class,
-                    List.class,
-                    MarkupModelEx.class,
-                    int.class,
-                    HighlightingSession.class);
-            setHighlightersInRange.setAccessible(true);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-        return setHighlightersInRange;
     }
 
     private boolean isCaretOverCollapsedFoldRegion() {
         return this.myEditor.getFoldingModel().getCollapsedRegionAtOffset(this.myEditor.getCaretModel().getOffset()) != null;
     }
 
-    private @NotNull List<HighlightInfo> getHighlights() {
+    private @NotNull List<HighlightInfo> createHighlightInfos() {
         if (myReadAccessRanges.isEmpty() && myWriteAccessRanges.isEmpty() && myCodeBlockMarkerRanges.isEmpty()) {
             return Collections.emptyList();
         }
@@ -263,7 +232,7 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
     }
 
     private int getId() {
-        int id = MyHighlightUsageHandler.id;
+        int id = MyIdentifierHighlightHandler.id;
         if (id == 0) {
 
             Method getNextAvailableId = null;
@@ -275,11 +244,11 @@ public class MyHighlightUsageHandler extends HighlightUsagesHandlerBase<PsiEleme
             getNextAvailableId.setAccessible(true);
 
             TextEditorHighlightingPassRegistrarImpl registrar = (TextEditorHighlightingPassRegistrarImpl) TextEditorHighlightingPassRegistrar.getInstance(this.myFile.getProject());
-            synchronized(MyHighlightUsageHandler.class) {
-                id = MyHighlightUsageHandler.id;
+            synchronized(MyIdentifierHighlightHandler.class) {
+                id = MyIdentifierHighlightHandler.id;
                 if (id == 0) {
                     try {
-                        MyHighlightUsageHandler.id = id = (int) getNextAvailableId.invoke(registrar);
+                        MyIdentifierHighlightHandler.id = id = (int) getNextAvailableId.invoke(registrar);
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         throw new RuntimeException(e);
                     }
