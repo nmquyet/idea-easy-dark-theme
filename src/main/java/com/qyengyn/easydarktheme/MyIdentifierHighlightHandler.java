@@ -19,10 +19,7 @@ import com.intellij.openapi.editor.ex.util.LexerEditorHighlighter;
 import com.intellij.openapi.editor.highlighter.EditorHighlighter;
 import com.intellij.openapi.editor.highlighter.HighlighterIterator;
 import com.intellij.openapi.editor.impl.DocumentMarkupModel;
-import com.intellij.openapi.editor.markup.AttributesFlyweight;
-import com.intellij.openapi.editor.markup.MarkupModel;
-import com.intellij.openapi.editor.markup.RangeHighlighter;
-import com.intellij.openapi.editor.markup.TextAttributes;
+import com.intellij.openapi.editor.markup.*;
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorAndFontDescriptorsProvider;
@@ -60,6 +57,7 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
     private final int myCaretOffset;
     private static volatile int id;
 
+    private final @Nullable Color myTargetFgColor;
     private final @Nullable Color myTargetBgColor;
     private final TextAttributes defaultReadAttribute;
     private final TextAttributes defaultWriteAttribute;
@@ -86,6 +84,7 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
         this.defaultWriteAttribute = colorsScheme.getAttributes(ELEMENT_UNDER_CARET_WRITE.getAttributesKey());
 
         if (keyMap.isEmpty()) {
+            this.myTargetFgColor = null;
             this.myTargetBgColor = null;
         } else {
             ArrayList<Pair<ColorAndFontDescriptorsProvider, AttributesDescriptor>> attrs = new ArrayList<>(keyMap.values());
@@ -99,13 +98,14 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
                     .orElse(null);
 
             if (attribute != null && attribute.getForegroundColor() != null) {
-                Color detectedFgColor = attribute.getForegroundColor();
+                this.myTargetFgColor = attribute.getForegroundColor();
                 this.myTargetBgColor = new Color(
-                        detectedFgColor.getRed(),
-                        detectedFgColor.getGreen(),
-                        detectedFgColor.getBlue(),
+                        myTargetFgColor.getRed(),
+                        myTargetFgColor.getGreen(),
+                        myTargetFgColor.getBlue(),
                         Integer.getInteger("easydarktheme.highlight.opacity", 60));
             } else {
+                this.myTargetFgColor = null;
                 this.myTargetBgColor = null;
             }
         }
@@ -233,19 +233,20 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
         if (unescapedTooltip != null) {
             builder.unescapedToolTip(unescapedTooltip);
         }
-        if (this.myTargetBgColor != null) {
+        if (this.myTargetFgColor != null && this.myTargetBgColor != null) {
             AttributesFlyweight textAttributes =  type == ELEMENT_UNDER_CARET_READ
-                    ? AttributesFlyweight.create(null,
+                    ? AttributesFlyweight.create(this.myTargetFgColor,
                                                  this.myTargetBgColor,
                                                  Font.PLAIN,
                                                  null,
                                                  null,
                                                  this.defaultReadAttribute.getErrorStripeColor())
-                    : AttributesFlyweight.create(null,
-                                                 this.defaultWriteAttribute.getBackgroundColor(),
+                    : AttributesFlyweight.create(this.myTargetFgColor,
+                                                 //this.defaultWriteAttribute.getBackgroundColor(),
+                                                 this.myTargetBgColor,
                                                  Font.PLAIN,
-                                                 null,
-                                                 null,
+                                                 this.myTargetFgColor,
+                                                 EffectType.ROUNDED_BOX,
                                                  this.defaultWriteAttribute.getErrorStripeColor());
             builder.textAttributes(TextAttributes.fromFlyweight(textAttributes));
         }
