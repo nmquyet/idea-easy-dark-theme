@@ -3,8 +3,6 @@ package com.qyengyn.easydarktheme;
 import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
 import com.intellij.lang.annotation.HighlightSeverity;
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
-import com.intellij.openapi.editor.HighlighterColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiImportStatement;
@@ -15,20 +13,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
-public class MyJavaExtendedKeywordAnnotator implements Annotator {
-    private static final HashMap<String, String> KEYWORDS = new HashMap<>(){{
-        put("null", "JAVA_CONSTANT_KEYWORD");
-        put("true", "JAVA_CONSTANT_KEYWORD");
-        put("false", "JAVA_CONSTANT_KEYWORD");
+public class MyJavaExtendedAnnotator implements Annotator {
+    private static final HashMap<String, TextAttributesKey> KEYWORDS = new HashMap<>(){{
+        put("null", MyHighlightingColors.JAVA_CONSTANT_KEYWORD);
+        put("true", MyHighlightingColors.JAVA_CONSTANT_KEYWORD);
+        put("false", MyHighlightingColors.JAVA_CONSTANT_KEYWORD);
 
-        put("boolean", "JAVA_PRIMITIVE_KEYWORD");
-        put("char", "JAVA_PRIMITIVE_KEYWORD");
-        put("byte", "JAVA_PRIMITIVE_KEYWORD");
-        put("short", "JAVA_PRIMITIVE_KEYWORD");
-        put("int", "JAVA_PRIMITIVE_KEYWORD");
-        put("long", "JAVA_PRIMITIVE_KEYWORD");
-        put("double", "JAVA_PRIMITIVE_KEYWORD");
-        put("float", "JAVA_PRIMITIVE_KEYWORD");
+        put("boolean", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("char", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("byte", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("short", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("int", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("long", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("double", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+        put("float", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
     }};
 
     @Override
@@ -47,10 +45,7 @@ public class MyJavaExtendedKeywordAnnotator implements Annotator {
             return;
         }
         annotationHolder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
-            .textAttributes(TextAttributesKey.createTextAttributesKey(
-                    KEYWORDS.get(keyword),
-                    DefaultLanguageHighlighterColors.KEYWORD)
-            )
+            .textAttributes(KEYWORDS.get(keyword))
             .create();
     }
 
@@ -65,10 +60,7 @@ public class MyJavaExtendedKeywordAnnotator implements Annotator {
             return;
 
         annotationHolder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
-            .textAttributes(TextAttributesKey.createTextAttributesKey(
-                "JAVA_PACKAGE_REFERENCE",
-                HighlighterColors.TEXT)
-            )
+            .textAttributes(MyHighlightingColors.JAVA_IMPORT_PACKAGE_PREFIX)
             .create();
     }
 }
