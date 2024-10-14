@@ -8,10 +8,10 @@ import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class MyIdentifierHighlightHandlerFactory extends HighlightUsagesHandlerFactoryBase {
+public class DynamicColorIdentifierHighlightHandlerFactory extends HighlightUsagesHandlerFactoryBase {
 
     @Override
     public @Nullable HighlightUsagesHandlerBase<PsiElement> createHighlightUsagesHandler(@NotNull Editor editor, @NotNull PsiFile file, @NotNull PsiElement element) {
-        return new MyIdentifierHighlightHandler(editor, file, element);
+        return new DynamicColorIdentifierHighlightHandler(editor, file, element);
     }
 }

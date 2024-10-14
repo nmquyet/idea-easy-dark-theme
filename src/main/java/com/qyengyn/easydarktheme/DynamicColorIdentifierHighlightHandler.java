@@ -49,7 +49,7 @@ import static com.intellij.codeInsight.daemon.impl.HighlightInfoType.*;
 
 
 @SuppressWarnings({"UnstableApiUsage", "KotlinInternalInJava", "UseJBColor"})
-public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<PsiElement> {
+public class DynamicColorIdentifierHighlightHandler extends HighlightUsagesHandlerBase<PsiElement> {
 
     private final Collection<TextRange> myReadAccessRanges;
     private final Collection<TextRange> myWriteAccessRanges;
@@ -62,7 +62,7 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
     private final TextAttributes defaultReadAttribute;
     private final TextAttributes defaultWriteAttribute;
 
-    protected MyIdentifierHighlightHandler(@NotNull Editor editor, @NotNull PsiFile file, PsiElement target) {
+    protected DynamicColorIdentifierHighlightHandler(@NotNull Editor editor, @NotNull PsiFile file, PsiElement target) {
         super(editor, file);
         this.myCaretOffset = editor.getCaretModel().getOffset();
         this.myReadAccessRanges =  Collections.synchronizedSet(new LinkedHashSet<>());
@@ -259,7 +259,7 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
     }
 
     private int getId() {
-        int id = MyIdentifierHighlightHandler.id;
+        int id = DynamicColorIdentifierHighlightHandler.id;
         if (id == 0) {
 
             Method getNextAvailableId = null;
@@ -271,11 +271,11 @@ public class MyIdentifierHighlightHandler extends HighlightUsagesHandlerBase<Psi
             getNextAvailableId.setAccessible(true);
 
             TextEditorHighlightingPassRegistrarImpl registrar = (TextEditorHighlightingPassRegistrarImpl) TextEditorHighlightingPassRegistrar.getInstance(this.myFile.getProject());
-            synchronized(MyIdentifierHighlightHandler.class) {
-                id = MyIdentifierHighlightHandler.id;
+            synchronized(DynamicColorIdentifierHighlightHandler.class) {
+                id = DynamicColorIdentifierHighlightHandler.id;
                 if (id == 0) {
                     try {
-                        MyIdentifierHighlightHandler.id = id = (int) getNextAvailableId.invoke(registrar);
+                        DynamicColorIdentifierHighlightHandler.id = id = (int) getNextAvailableId.invoke(registrar);
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         throw new RuntimeException(e);
                     }
