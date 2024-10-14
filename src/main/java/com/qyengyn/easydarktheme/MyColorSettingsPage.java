@@ -17,13 +17,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyColorSettingsPage implements ColorSettingsPage {
-    private static AttributesDescriptor[] ATTRS = {
+    private static final AttributesDescriptor[] ATTRS = {
         new AttributesDescriptor("Java//Keyword//Primitive Type", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD),
         new AttributesDescriptor("Java//Keyword//Constant", MyHighlightingColors.JAVA_CONSTANT_KEYWORD),
         new AttributesDescriptor("Java//Import Statement//Package Prefix", MyHighlightingColors.JAVA_IMPORT_PACKAGE_PREFIX)
     };
 
-    private static Map<String, TextAttributesKey> TAGS = new HashMap<>() {{
+    private static final Map<String, TextAttributesKey> TAGS = new HashMap<>() {{
         put("importPackagePrefix", MyHighlightingColors.JAVA_IMPORT_PACKAGE_PREFIX);
         put("primitive", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
         put("constant", MyHighlightingColors.JAVA_CONSTANT_KEYWORD);
