@@ -2,7 +2,7 @@
   "name": "Easy Dark",
   "dark": true,
   "author": "qyengyn",
-  "editorScheme": "Easy Dark Alternate",
+  "editorScheme": "/easy_dark_alternate.xml",
   "colors": {
     "background": "#292828",
     "darkerBackground": "#262525",

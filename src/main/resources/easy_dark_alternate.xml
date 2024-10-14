@@ -1376,19 +1376,5 @@
         </option>
         <option name="XPATH.FUNCTION" baseAttributes="DEFAULT_FUNCTION_CALL" />
         <option name="XPATH.KEYWORD" baseAttributes="DEFAULT_KEYWORD" />
-
-        <!-- Custom annotator -->
-        <option name="JAVA_CONSTANT_KEYWORD">
-            <value>
-                <option name="FOREGROUND" value="D3879B"/>
-            </value>
-        </option>
-        <option name="JAVA_PRIMITIVE_KEYWORD">
-            <value>
-                <option name="FOREGROUND" value="FE8119"/>
-            </value>
-        </option>
-        <option name="JAVA_PACKAGE_REFERENCE" baseAttributes="TEXT"/>
-
     </attributes>
 </scheme>

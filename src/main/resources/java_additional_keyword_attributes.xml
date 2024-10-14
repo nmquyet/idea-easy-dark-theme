@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<list>
+    <option name="JAVA_CONSTANT_KEYWORD">
+        <value>
+            <option name="FOREGROUND" value="D3879B"/>
+        </value>
+    </option>
+    <option name="JAVA_PRIMITIVE_KEYWORD">
+        <value>
+            <option name="FOREGROUND" value="FE8119"/>
+        </value>
+    </option>
+    <option name="JAVA_PACKAGE_REFERENCE" baseAttributes="TEXT"/>
+</list>
