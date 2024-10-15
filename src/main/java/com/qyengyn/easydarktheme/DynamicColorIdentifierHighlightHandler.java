@@ -71,7 +71,7 @@ public class DynamicColorIdentifierHighlightHandler extends HighlightUsagesHandl
 
         Project project = file.getProject();
         Map<TextAttributesKey, Pair<ColorAndFontDescriptorsProvider, AttributesDescriptor>> keyMap = new HashMap<>();
-        List<TextAttributesKey> keys = getTextAttributesKeys(project, editor);
+        List<TextAttributesKey> keys = getTextAttributesKeys(project, editor, target);
         for (TextAttributesKey key : keys) {
             Pair<ColorAndFontDescriptorsProvider, AttributesDescriptor> p = key == null
                     ? null
@@ -287,7 +287,7 @@ public class DynamicColorIdentifierHighlightHandler extends HighlightUsagesHandl
     }
 
 
-    public static @NotNull List<TextAttributesKey> getTextAttributesKeys(@NotNull Project project, @NotNull Editor editor) {
+    public static @NotNull List<TextAttributesKey> getTextAttributesKeys(@NotNull Project project, @NotNull Editor editor, @NotNull PsiElement element) {
         List<TextAttributesKey> keys = new ArrayList<>();
         Ref<TextRange> selectionRef = new Ref<>();
         Ref<Boolean> hasEraseMarkerRef = new Ref<>();
@@ -310,7 +310,7 @@ public class DynamicColorIdentifierHighlightHandler extends HighlightUsagesHandl
         JBIterable<Editor> editors = editor instanceof EditorWindow ? JBIterable.of(editor, ((EditorWindow)editor).getDelegate()) : JBIterable.of(
                 editor);
         for (Editor ed : editors) {
-            TextRange selection = EditorUtil.getSelectionInAnyMode(ed);
+            TextRange selection = element.getTextRange();
             selectionRef.set(selection);
             hasEraseMarkerRef.set(false);
             MarkupModel forDocument = DocumentMarkupModel.forDocument(ed.getDocument(), project, false);
