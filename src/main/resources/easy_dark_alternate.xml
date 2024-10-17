@@ -265,7 +265,7 @@
             <value>
                 <option name="FOREGROUND" value="5697ed" />
                 <option name="EFFECT_COLOR" value="5697ed" />
-                <option name="EFFECT_TYPE" value="1" />
+                <option name="EFFECT_TYPE" value="-1" />
             </value>
         </option>
         <option name="CUSP_BRACKETS_ATTR">
@@ -386,7 +386,7 @@
         </option>
         <option name="DEFAULT_FUNCTION_CALL">
             <value>
-                <option name="FOREGROUND" value="84a598" />
+                <option name="FOREGROUND" value="74b0a8" />
             </value>
         </option>
         <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -408,7 +408,7 @@
         <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
         <option name="DEFAULT_INSTANCE_METHOD">
             <value>
-                <option name="FOREGROUND" value="84a598" />
+                <option name="FOREGROUND" value="74b0a8" />
             </value>
         </option>
         <option name="DEFAULT_INTERFACE_NAME">
@@ -489,7 +489,7 @@
         <option name="DEFAULT_STATIC_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
         <option name="DEFAULT_STATIC_METHOD">
             <value>
-                <option name="FOREGROUND" value="84a598" />
+                <option name="FOREGROUND" value="74b0a8" />
             </value>
         </option>
         <option name="DEFAULT_STRING">

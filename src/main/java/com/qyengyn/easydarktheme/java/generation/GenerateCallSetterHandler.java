@@ -3,16 +3,29 @@ package com.qyengyn.easydarktheme.java.generation;
 import com.intellij.codeInsight.CodeInsightActionHandler;
 import com.intellij.codeInsight.generation.PsiMethodMember;
 import com.intellij.codeInsight.hint.HintManager;
+import com.intellij.ide.util.MemberChooser;
+import com.intellij.openapi.application.ReadAction;
+import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.editor.EditorModificationUtil;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.*;
+import com.intellij.psi.JavaPsiFacade;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiClassType;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiElementFactory;
+import com.intellij.psi.PsiExpression;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiIdentifier;
+import com.intellij.psi.PsiLocalVariable;
+import com.intellij.psi.PsiMethod;
+import com.intellij.psi.PsiStatement;
+import com.intellij.psi.PsiType;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.psi.util.PsiUtil;
+import com.qyengyn.easydarktheme.java.JavaPsiUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class GenerateCallSetterHandler implements CodeInsightActionHandler {
@@ -22,6 +35,11 @@ public class GenerateCallSetterHandler implements CodeInsightActionHandler {
 
     @Override
     public final void invoke(final @NotNull Project project, final @NotNull Editor editor, @NotNull PsiFile file) {
+        if (!EditorModificationUtil.checkModificationAllowed(editor)) return;
+        if (!FileDocumentManager.getInstance().requestWriting(editor.getDocument(), project)) {
+            return;
+        }
+
         int offset = editor.getCaretModel().getOffset();
         PsiElement element = file.findElementAt(offset);
         if (!(element instanceof PsiIdentifier psiIdentifier)) {
@@ -39,21 +57,18 @@ public class GenerateCallSetterHandler implements CodeInsightActionHandler {
             return;
         }
 
-        final PsiMethodMember[] members = findAllPublicSetters(aClass);
-        if (members == null) {
-            showHint(editor, "No public setters found");
-            return;
-        }
+        final PsiMethodMember[] members = ReadAction.compute(
+                () -> JavaPsiUtils.findAllPublicSetters(aClass));
 
-        generateCode(project, members, psiLocalVariable);
+        var dialog = new MemberChooser<>(members, false, true, project, null, null);
+        dialog.show();
+        var selectedMembers = dialog.getSelectedElements()
+            .toArray(new PsiMethodMember[0]);
+
+        WriteAction.run(() -> generateCode(project, selectedMembers, psiLocalVariable));
     }
 
-    @Override
-    public String toString() {
-        return "GenerateSetObjectPropsHandler{}";
-    }
-
-    private void generateCode(final Project project, PsiMethodMember[] members, PsiLocalVariable element) {
+    private void generateCode(Project project, PsiMethodMember[] members, PsiLocalVariable element) {
         PsiStatement anchor = PsiTreeUtil.getParentOfType(element, PsiStatement.class);
         if (anchor == null)
             return;
@@ -66,24 +81,6 @@ public class GenerateCallSetterHandler implements CodeInsightActionHandler {
                     null);
             anchor.getParent().addAfter(statement, anchor);
         }
-    }
-
-    protected PsiMethodMember @Nullable [] findAllPublicSetters(final PsiClass aClass) {
-        PsiMethod[] allMethods = aClass.getAllMethods();
-        List<PsiMethodMember> result = new ArrayList<>();
-        for (PsiMethod method : allMethods) {
-            if (!method.getName().startsWith("set")) continue;
-
-            PsiParameterList parameterList = method.getParameterList();
-            if (parameterList.getParametersCount() != 1) continue;
-
-            PsiModifierList modifierList = method.getModifierList();
-            if (!modifierList.hasModifierProperty(PsiModifier.PUBLIC)) continue;
-            if (modifierList.hasModifierProperty(PsiModifier.STATIC)) continue;
-
-            result.add(new PsiMethodMember(method));
-        }
-        return result.toArray(new PsiMethodMember[0]);
     }
 
     protected PsiClass resolvePsiClass(PsiLocalVariable localVariable) {
@@ -116,4 +113,8 @@ public class GenerateCallSetterHandler implements CodeInsightActionHandler {
         HintManager.getInstance().showInformationHint(editor, message);
     }
 
+    @Override
+    public boolean startInWriteAction() {
+        return false;
+    }
 }
