@@ -386,7 +386,7 @@
         </option>
         <option name="DEFAULT_FUNCTION_CALL">
             <value>
-                <option name="FOREGROUND" value="74b0a8" />
+                <option name="FOREGROUND" value="7bb9b1" />
             </value>
         </option>
         <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -408,7 +408,7 @@
         <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
         <option name="DEFAULT_INSTANCE_METHOD">
             <value>
-                <option name="FOREGROUND" value="74b0a8" />
+                <option name="FOREGROUND" value="7bb9b1" />
             </value>
         </option>
         <option name="DEFAULT_INTERFACE_NAME">
@@ -489,7 +489,7 @@
         <option name="DEFAULT_STATIC_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
         <option name="DEFAULT_STATIC_METHOD">
             <value>
-                <option name="FOREGROUND" value="74b0a8" />
+                <option name="FOREGROUND" value="7bb9b1" />
             </value>
         </option>
         <option name="DEFAULT_STRING">
