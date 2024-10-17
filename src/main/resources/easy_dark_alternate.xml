@@ -860,7 +860,7 @@
         </option>
         <option name="JS.GLOBAL_FUNCTION">
             <value>
-                <option name="FOREGROUND" value="84a598" />
+                <option name="FOREGROUND" value="74b0a8" />
             </value>
         </option>
         <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
@@ -872,7 +872,7 @@
         </option>
         <option name="JS.LOCAL_FUNCTION">
             <value>
-                <option name="FOREGROUND" value="84a598" />
+                <option name="FOREGROUND" value="74b0a8" />
             </value>
         </option>
         <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
