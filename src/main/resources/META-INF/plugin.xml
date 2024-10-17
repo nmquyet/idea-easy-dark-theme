@@ -3,6 +3,9 @@
   <name>Easy Dark Theme</name>
   <vendor email="minhquyet@gmail.com">qyengyn</vendor>
 
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.java</depends>
+
   <extensions defaultExtensionNs="com.intellij">
     <themeProvider id="com.qyengyn.easy-dark-theme" path="/easy_dark.theme.json"/>
     <bundledColorScheme id="com.qyengyn.easy-dark-color-scheme" path="/easy_dark.xml"/>
@@ -16,7 +19,12 @@
     <colorSettingsPage implementation="com.qyengyn.easydarktheme.MyColorSettingsPage"/>
   </extensions>
 
-
-  <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.java</depends>
+  <actions>
+    <action id="com.qyengyn.easydarktheme.java.generation.GenerateCallSetter"
+            class="com.qyengyn.easydarktheme.java.generation.actions.GenerateCallSetterAction"
+            text="Call Setter" description="Generate statement to set properties to this object">
+      <add-to-group group-id="QuickFixes" anchor="last"/>
+      <add-to-group group-id="JavaGenerateGroup2" anchor="last" />
+    </action>
+  </actions>
 </idea-plugin>
