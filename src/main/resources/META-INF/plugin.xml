@@ -17,13 +17,19 @@
     <additionalTextAttributes scheme="Easy Dark Alternate" file="/java_additional_keyword_attributes.xml"/>
 
     <colorSettingsPage implementation="com.qyengyn.easydarktheme.MyColorSettingsPage"/>
+
+    <intentionAction>
+      <language>JAVA</language>
+      <className>com.qyengyn.easydarktheme.java.generation.intention.CallSetterIntention</className>
+      <bundleName>messages.JavaBundle</bundleName>
+      <categoryKey>intention.category.other</categoryKey>
+    </intentionAction>
   </extensions>
 
   <actions>
     <action id="com.qyengyn.easydarktheme.java.generation.GenerateCallSetter"
             class="com.qyengyn.easydarktheme.java.generation.actions.GenerateCallSetterAction"
-            text="Call Setter" description="Generate statement to set properties to this object">
-      <add-to-group group-id="QuickFixes" anchor="last"/>
+            text="Set values with setters" description="Generate statement to set properties to this object using public Setter methods">
       <add-to-group group-id="JavaGenerateGroup2" anchor="last" />
     </action>
   </actions>

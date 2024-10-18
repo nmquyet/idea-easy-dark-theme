@@ -1,0 +1,4 @@
+var obj = new SomeObject();
+obj.setProperty1();
+obj.setProperty2();
+obj.setProperty3();

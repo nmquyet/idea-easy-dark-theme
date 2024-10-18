@@ -4,9 +4,6 @@ public class Test {
 
     public static Data1 from() {
         var dto = new Data1();
-        dto.setNew();
-        dto.setName();
-        dto.setId();
         return null;
     }
 
