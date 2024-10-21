@@ -1101,6 +1101,31 @@
                 <option name="FOREGROUND" value="83a598" />
             </value>
         </option>
+        <option name="ROUND_BRACKETS_RAINBOW_COLOR0">
+            <value>
+                <option name="FOREGROUND" value="ad8c2a" />
+            </value>
+        </option>
+        <option name="ROUND_BRACKETS_RAINBOW_COLOR1">
+            <value>
+                <option name="FOREGROUND" value="5b9644" />
+            </value>
+        </option>
+        <option name="ROUND_BRACKETS_RAINBOW_COLOR2">
+            <value>
+                <option name="FOREGROUND" value="884b75" />
+            </value>
+        </option>
+        <option name="ROUND_BRACKETS_RAINBOW_COLOR3">
+            <value>
+                <option name="FOREGROUND" value="6d5faf" />
+            </value>
+        </option>
+        <option name="ROUND_BRACKETS_RAINBOW_COLOR4">
+            <value>
+                <option name="FOREGROUND" value="137a77" />
+            </value>
+        </option>
         <option name="RUBY_CONSTANT">
             <value>
                 <option name="FOREGROUND" value="fabd2f" />
@@ -1382,4 +1407,5 @@
         </option>
         <option name="XPATH.FUNCTION" baseAttributes="DEFAULT_FUNCTION_CALL" />
         <option name="XPATH.KEYWORD" baseAttributes="DEFAULT_KEYWORD" />
-    </attributes></scheme>
+    </attributes>
+</scheme>
