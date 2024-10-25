@@ -10,5 +10,10 @@
             <option name="FOREGROUND" value="FE8119"/>
         </value>
     </option>
+    <option name="JAVA_TERMINATE_KEYWORD">
+        <value>
+            <option name="FOREGROUND" value="D94F4F"/>
+        </value>
+    </option>
     <option name="JAVA_PACKAGE_REFERENCE" baseAttributes="TEXT"/>
 </list>

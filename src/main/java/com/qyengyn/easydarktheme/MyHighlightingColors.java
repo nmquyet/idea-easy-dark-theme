@@ -8,5 +8,6 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 public final class MyHighlightingColors {
     public static final TextAttributesKey JAVA_CONSTANT_KEYWORD = TextAttributesKey.createTextAttributesKey("JAVA_CONSTANT_KEYWORD", DefaultLanguageHighlighterColors.CONSTANT);
     public static final TextAttributesKey JAVA_PRIMITIVE_KEYWORD = TextAttributesKey.createTextAttributesKey("JAVA_PRIMITIVE_KEYWORD", JavaHighlightingColors.CLASS_NAME_ATTRIBUTES);
+    public static final TextAttributesKey JAVA_TERMINATE_KEYWORD = TextAttributesKey.createTextAttributesKey("JAVA_TERMINATE_KEYWORD", JavaHighlightingColors.KEYWORD);
     public static final TextAttributesKey JAVA_IMPORT_PACKAGE_PREFIX = TextAttributesKey.createTextAttributesKey("JAVA_PACKAGE_REFERENCE", HighlighterColors.TEXT);
 }

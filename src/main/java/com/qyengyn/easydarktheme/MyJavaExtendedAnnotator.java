@@ -27,6 +27,11 @@ public class MyJavaExtendedAnnotator implements Annotator {
         put("long", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
         put("double", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
         put("float", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
+
+        put("return", MyHighlightingColors.JAVA_TERMINATE_KEYWORD);
+        put("throw", MyHighlightingColors.JAVA_TERMINATE_KEYWORD);
+        put("break", MyHighlightingColors.JAVA_TERMINATE_KEYWORD);
+        put("continue", MyHighlightingColors.JAVA_TERMINATE_KEYWORD);
     }};
 
     @Override

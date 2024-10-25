@@ -20,6 +20,7 @@ public class MyColorSettingsPage implements ColorSettingsPage {
     private static final AttributesDescriptor[] ATTRS = {
         new AttributesDescriptor("Java//Keyword//Primitive Type", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD),
         new AttributesDescriptor("Java//Keyword//Constant", MyHighlightingColors.JAVA_CONSTANT_KEYWORD),
+        new AttributesDescriptor("Java//Keyword//Terminate", MyHighlightingColors.JAVA_TERMINATE_KEYWORD),
         new AttributesDescriptor("Java//Import Statement//Package Prefix", MyHighlightingColors.JAVA_IMPORT_PACKAGE_PREFIX)
     };
 
@@ -27,6 +28,7 @@ public class MyColorSettingsPage implements ColorSettingsPage {
         put("importPackagePrefix", MyHighlightingColors.JAVA_IMPORT_PACKAGE_PREFIX);
         put("primitive", MyHighlightingColors.JAVA_PRIMITIVE_KEYWORD);
         put("constant", MyHighlightingColors.JAVA_CONSTANT_KEYWORD);
+        put("terminate", MyHighlightingColors.JAVA_TERMINATE_KEYWORD);
     }};
 
     @Override
@@ -64,7 +66,7 @@ public class MyColorSettingsPage implements ColorSettingsPage {
 
             public <primitive>boolean</primitive> isPositive() {
                 if (number == 0) {
-                    return <constant>true</constant>;
+                    <terminalte>return</terminate> <constant>true</constant>;
                 }
                 return this.number > 0;
             }
