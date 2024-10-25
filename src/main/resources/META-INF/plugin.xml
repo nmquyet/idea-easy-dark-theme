@@ -12,6 +12,7 @@
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark" path="/easy_dark.xml"/>
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-alternate" path="/easy_dark_alternate.xml"/>
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-alternate-deep" path="/easy_dark_alternate_deep.xml"/>
+    <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-neutral" path="/easy_dark_neutral.xml"/>
 
     <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.MyJavaExtendedAnnotator"/>
     <highlightUsagesHandlerFactory implementation="com.qyengyn.easydarktheme.DynamicColorIdentifierHighlightHandlerFactory"/>
