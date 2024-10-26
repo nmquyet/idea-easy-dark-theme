@@ -14,11 +14,13 @@
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-alternate-deep" path="/easy_dark_alternate_deep.xml"/>
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-neutral" path="/easy_dark_neutral.xml"/>
 
-    <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.MyJavaExtendedAnnotator"/>
-    <highlightUsagesHandlerFactory implementation="com.qyengyn.easydarktheme.DynamicColorIdentifierHighlightHandlerFactory"/>
-
     <additionalTextAttributes scheme="Easy Dark" file="/java_additional_keyword_attributes.xml"/>
     <additionalTextAttributes scheme="Easy Dark Alternate" file="/java_additional_keyword_attributes.xml"/>
+    <additionalTextAttributes scheme="Easy Dark Alternate Deep" file="/java_additional_keyword_attributes.xml"/>
+    <additionalTextAttributes scheme="Easy Dark Neutral" file="/java_additional_keyword_attributes.xml"/>
+
+    <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.MyJavaExtendedAnnotator"/>
+    <highlightUsagesHandlerFactory implementation="com.qyengyn.easydarktheme.DynamicColorIdentifierHighlightHandlerFactory"/>
 
     <colorSettingsPage implementation="com.qyengyn.easydarktheme.MyColorSettingsPage"/>
 

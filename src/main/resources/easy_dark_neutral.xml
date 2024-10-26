@@ -1,7 +1,7 @@
-<scheme name="Easy Dark Neutral" version="1" parent_scheme="Darcula">
+<scheme name="Easy Dark Neutral" version="142" parent_scheme="Darcula">
     <metaInfo>
         <property name="ide">idea</property>
-        <property name="ideVersion">2024.2.3.0.0</property>
+        <property name="ideVersion">2024.2.4.0.0</property>
     </metaInfo>
     <colors>
         <option name="ADDED_LINES_COLOR" value="628556"/>

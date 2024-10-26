@@ -66,7 +66,7 @@ public class MyColorSettingsPage implements ColorSettingsPage {
 
             public <primitive>boolean</primitive> isPositive() {
                 if (number == 0) {
-                    <terminalte>return</terminate> <constant>true</constant>;
+                    <terminate>return</terminate> <constant>true</constant>;
                 }
                 return this.number > 0;
             }
