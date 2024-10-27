@@ -402,7 +402,7 @@
         </option>
         <option name="DEFAULT_KEYWORD">
             <value>
-                <option name="FOREGROUND" value="ef5740" />
+                <option name="FOREGROUND" value="ec6153" />
             </value>
         </option>
         <option name="DEFAULT_LABEL">
@@ -907,11 +907,6 @@
         <option name="MATCHED_TAG_NAME">
             <value>
                 <option name="BACKGROUND" value="574e59" />
-            </value>
-        </option>
-        <option name="METHOD_DECLARATION_ATTRIBUTES">
-            <value>
-                <option name="FOREGROUND" value="8cb5cf" />
             </value>
         </option>
         <option name="NOT_TOP_FRAME_ATTRIBUTES">
