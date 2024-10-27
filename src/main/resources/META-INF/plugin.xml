@@ -5,6 +5,7 @@
 
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.java</depends>
+  <depends>JavaScript</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <themeProvider id="com.qyengyn.easy-dark-theme" path="/easy_dark.theme.json"/>
@@ -19,7 +20,9 @@
     <additionalTextAttributes scheme="Easy Dark Alternate Deep" file="/java_additional_keyword_attributes.xml"/>
     <additionalTextAttributes scheme="Easy Dark Neutral" file="/java_additional_keyword_attributes.xml"/>
 
-    <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.MyJavaExtendedAnnotator"/>
+    <annotator language="JAVA" implementationClass="com.qyengyn.easydarktheme.java.MyJavaExtendedAnnotator"/>
+    <annotator language="JavaScript" implementationClass="com.qyengyn.easydarktheme.javascript.MyJavascriptExtendedAnnotator"/>
+
     <highlightUsagesHandlerFactory implementation="com.qyengyn.easydarktheme.DynamicColorIdentifierHighlightHandlerFactory"/>
 
     <colorSettingsPage implementation="com.qyengyn.easydarktheme.MyColorSettingsPage"/>

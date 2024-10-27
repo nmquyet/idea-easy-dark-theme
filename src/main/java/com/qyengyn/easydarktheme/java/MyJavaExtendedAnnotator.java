@@ -1,4 +1,4 @@
-package com.qyengyn.easydarktheme;
+package com.qyengyn.easydarktheme.java;
 
 import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
@@ -9,6 +9,7 @@ import com.intellij.psi.PsiImportStatement;
 import com.intellij.psi.PsiJavaToken;
 import com.intellij.psi.impl.source.PsiJavaCodeReferenceElementImpl;
 import com.intellij.psi.impl.source.tree.JavaElementType;
+import com.qyengyn.easydarktheme.MyHighlightingColors;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
