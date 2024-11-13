@@ -2,7 +2,7 @@
   "name": "Easy Dark",
   "dark": true,
   "author": "qyengyn",
-  "editorScheme": "/easy_dark_neutral.xml",
+  "editorScheme": "/easy_dark_colorful.xml",
   "colors": {
     "background": "#292828",
     "darkerBackground": "#262525",
@@ -47,6 +47,7 @@
       "underlineColor": "accent"
     },
     "EditorTabs": {
+      "background": "darkerBackground",
       "borderColor": "borderNeutral",
       "unselectedBlend": "0.6",
       "unselectedAlpha": "0.6",

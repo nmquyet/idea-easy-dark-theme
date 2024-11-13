@@ -14,6 +14,7 @@
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-alternate" path="/easy_dark_alternate.xml"/>
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-alternate-deep" path="/easy_dark_alternate_deep.xml"/>
     <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-neutral" path="/easy_dark_neutral.xml"/>
+    <bundledColorScheme id="com.qyengyn.colorscheme.easy-dark-colorful" path="/easy_dark_colorful.xml"/>
 
     <additionalTextAttributes scheme="Easy Dark" file="/java_additional_keyword_attributes.xml"/>
     <additionalTextAttributes scheme="Easy Dark Alternate" file="/java_additional_keyword_attributes.xml"/>
