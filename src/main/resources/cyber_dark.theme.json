@@ -1,30 +1,30 @@
 {
-  "name": "Easy Dark",
+  "name": "Cyber Dark",
   "dark": true,
   "author": "qyengyn",
-  "editorScheme": "/easy_dark_neutral.xml",
+  "editorScheme": "/cyber_dark.xml",
   "colors": {
-    "background": "#292828",
-    "darkerBackground": "#262525",
+    "background": "#27282b",
+    "darkerBackground": "#232426",
     "editor": "#32302F",
     "selection": "#094770",
-    "text": "#BDAF93",
-    "textHighlight": "#CEBE9C",
-    "infoText": "#807766",
-    "disabledText": "#5d564a",
-    "selectedText": "#EBDBB2",
+    "text": "#b3afa2",
+    "textHighlight": "#b3afa2",
+    "infoText": "#666A73",
+    "disabledText": "#44474d",
+    "selectedText": "#cfc8ba",
     "inactiveSelection": "#383635",
     "accent": "#3372ed",
-    "borderLow": "#332f2c",
-    "borderNeutral": "#3d3835",
-    "border": "#4d4744",
+    "borderLow": "#2e3033",
+    "borderNeutral": "#3a3c40",
+    "border": "#47494d",
     "notification": "#45494A"
   },
   "icons": {
     "ColorPalette": {
       "Tree.iconColor": "#747A7F",
-      "Gray.Stroke": "#a69b83",
-      "Gray.SecondaryStroke": "#a69b83"
+      "Gray.Stroke": "#bdbab5",
+      "Gray.SecondaryStroke": "#bdbab5"
     }
   },
   "ui": {
@@ -47,7 +47,7 @@
       "underlineColor": "accent"
     },
     "EditorTabs": {
-      "background": "darkerBackground",
+      "background": "background",
       "borderColor": "borderNeutral",
       "unselectedBlend": "0.6",
       "unselectedAlpha": "0.6",
