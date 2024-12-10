@@ -1,8 +1,12 @@
 <scheme name="Cyber Dark" version="142" parent_scheme="Darcula">
-    <metaInfo>
-        <property name="ide">idea</property>
-        <property name="ideVersion">2024.2.4.0.0</property>
-    </metaInfo>
+  <metaInfo>
+    <property name="ide">idea</property>
+    <property name="ideVersion">2024.2.4.0.0</property>
+  </metaInfo>
+  <option name="CONSOLE_FONT_NAME" value="JetBrains Mono" />
+  <option name="CONSOLE_FONT_SIZE" value="12" />
+  <option name="CONSOLE_LIGATURES" value="true" />
+  <option name="CONSOLE_LINE_SPACING" value="1.2" />
   <colors>
     <option name="ADDED_LINES_COLOR" value="628556" />
     <option name="ANNOTATIONS_COLOR" value="0" />
@@ -20,7 +24,6 @@
     <option name="DIAGRAM_NOTE_BORDER" value="32302f" />
     <option name="DIAGRAM_REALIZATION_EDGE" value="fabd2f" />
     <option name="DOCUMENTATION_COLOR" value="282828" />
-    <option name="EDITOR_GUTTER_BACKGROUND" value="" />
     <option name="FILESTATUS_ADDED" value="8ec07d" />
     <option name="FILESTATUS_DELETED" value="3d3d3d" />
     <option name="FILESTATUS_IDEA_FILESTATUS_DELETED_FROM_FILE_SYSTEM" value="3d3d3d" />
@@ -31,7 +34,6 @@
     <option name="FILESTATUS_IGNORE.PROJECT_VIEW.IGNORED" value="807866" />
     <option name="FILESTATUS_MERGED" value="a876aa" />
     <option name="FILESTATUS_MODIFIED" value="7398e3" />
-    <option name="FILESTATUS_SWITCHED" value="" />
     <option name="FILESTATUS_addedOutside" value="8ec07d" />
     <option name="FILESTATUS_modifiedOutside" value="7398e3" />
     <option name="GUTTER_BACKGROUND" value="202124" />
@@ -101,7 +103,7 @@
   <attributes>
     <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="fc801a" />
+        <option name="FOREGROUND" value="f1a210" />
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
@@ -345,7 +347,7 @@
     </option>
     <option name="DEFAULT_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="c39ad9" />
+        <option name="FOREGROUND" value="ee96a2" />
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT">
@@ -382,7 +384,7 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="75b0fa" />
+        <option name="FOREGROUND" value="8ab8f8" />
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -398,7 +400,7 @@
     </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="c4c0b3" />
+        <option name="FOREGROUND" value="c2bdab" />
       </value>
     </option>
     <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
@@ -416,7 +418,7 @@
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="ff566b" />
+        <option name="FOREGROUND" value="f25f5c" />
       </value>
     </option>
     <option name="DEFAULT_LABEL">
@@ -437,7 +439,7 @@
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
-        <option name="FOREGROUND" value="c39ad9" />
+        <option name="FOREGROUND" value="cda2e3" />
       </value>
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
@@ -447,7 +449,7 @@
     </option>
     <option name="DEFAULT_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="e5b859" />
+        <option name="FOREGROUND" value="e7c167" />
       </value>
     </option>
     <option name="DEFAULT_PARENTHS">
@@ -479,7 +481,7 @@
     </option>
     <option name="DEFAULT_STATIC_FIELD">
       <value>
-        <option name="FOREGROUND" value="a5c2c5" />
+        <option name="FOREGROUND" value="c5a4e5" />
       </value>
     </option>
     <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
@@ -557,7 +559,7 @@
     </option>
     <option name="ENUM_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="d6a0e0" />
+        <option name="FOREGROUND" value="eaa6c1" />
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
@@ -791,7 +793,7 @@
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="dead5a" />
+        <option name="FOREGROUND" value="c2bdab" />
       </value>
     </option>
     <option name="INACTIVE_HYPERLINK_ATTRIBUTES">
@@ -814,7 +816,7 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-        <option name="FOREGROUND" value="787878" />
+        <option name="FOREGROUND" value="505050" />
         <option name="BACKGROUND" value="383838" />
       </value>
     </option>
@@ -895,6 +897,11 @@
     <option name="LOG_EXPIRED_ENTRY">
       <value>
         <option name="FOREGROUND" value="5d554b" />
+      </value>
+    </option>
+    <option name="LOG_INFO_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="aec761" />
       </value>
     </option>
     <option name="LOG_VERBOSE_OUTPUT">
@@ -1270,7 +1277,7 @@
     </option>
     <option name="STATIC_METHOD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="75b0fa" />
+        <option name="FOREGROUND" value="8ab8f8" />
       </value>
     </option>
     <option name="Scala Predefined types">
@@ -1323,12 +1330,12 @@
     </option>
     <option name="TS.ENUM">
       <value>
-        <option name="FOREGROUND" value="e39090" />
+        <option name="FOREGROUND" value="e88bcb" />
       </value>
     </option>
     <option name="TS.PRIMITIVE.TYPES">
       <value>
-        <option name="FOREGROUND" value="fc801a" />
+        <option name="FOREGROUND" value="f1a210" />
       </value>
     </option>
     <option name="TS.TYPE_GUARD">
