@@ -401,7 +401,7 @@
     </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="ccc6b4" />
+        <option name="FOREGROUND" value="c9bdaf" />
       </value>
     </option>
     <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
@@ -445,7 +445,7 @@
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="de85ff" />
+        <option name="FOREGROUND" value="c17eee" />
       </value>
     </option>
     <option name="DEFAULT_PARAMETER">
@@ -1303,7 +1303,7 @@
     </option>
     <option name="TEXT">
       <value>
-        <option name="FOREGROUND" value="b3af9f" />
+        <option name="FOREGROUND" value="c9c0b7" />
         <option name="BACKGROUND" value="323436" />
       </value>
     </option>
