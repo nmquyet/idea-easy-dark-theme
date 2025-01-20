@@ -48,7 +48,7 @@
     <option name="IGNORED_ADDED_LINES_BORDER_COLOR" value="628556" />
     <option name="IGNORED_DELETED_LINES_BORDER_COLOR" value="ce3a2b" />
     <option name="IGNORED_MODIFIED_LINES_BORDER_COLOR" value="506aa1" />
-    <option name="INDENT_GUIDE" value="363636" />
+    <option name="INDENT_GUIDE" value="3b3b3b" />
     <option name="INFORMATION_HINT" value="141414" />
     <option name="LINE_NUMBERS_COLOR" value="8a8179" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="ebdbb2" />
@@ -103,7 +103,7 @@
   <attributes>
     <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="f1a210" />
+        <option name="FOREGROUND" value="f19b1b" />
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
@@ -175,19 +175,19 @@
     </option>
     <option name="CONSOLE_BLACK_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="3b3b3b" />
+        <option name="FOREGROUND" value="0" />
       </value>
     </option>
     <option name="CONSOLE_BLUE_BRIGHT_OUTPUT" baseAttributes="CONSOLE_BLUE_OUTPUT" />
     <option name="CONSOLE_BLUE_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="84a498" />
+        <option name="FOREGROUND" value="92bbff" />
       </value>
     </option>
     <option name="CONSOLE_CYAN_BRIGHT_OUTPUT" baseAttributes="CONSOLE_CYAN_OUTPUT" />
     <option name="CONSOLE_CYAN_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="8ec07b" />
+        <option name="FOREGROUND" value="8bd0c6" />
       </value>
     </option>
     <option name="CONSOLE_DARKGRAY_OUTPUT">
@@ -202,19 +202,19 @@
     </option>
     <option name="CONSOLE_GRAY_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="ebdbb2" />
+        <option name="FOREGROUND" value="7d818c" />
       </value>
     </option>
     <option name="CONSOLE_GREEN_BRIGHT_OUTPUT" baseAttributes="CONSOLE_GREEN_OUTPUT" />
     <option name="CONSOLE_GREEN_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="b8bb26" />
+        <option name="FOREGROUND" value="98cb86" />
       </value>
     </option>
     <option name="CONSOLE_MAGENTA_BRIGHT_OUTPUT" baseAttributes="CONSOLE_MAGENTA_OUTPUT" />
     <option name="CONSOLE_MAGENTA_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="d3859a" />
+        <option name="FOREGROUND" value="e7a4d0" />
       </value>
     </option>
     <option name="CONSOLE_NORMAL_OUTPUT">
@@ -236,7 +236,7 @@
     <option name="CONSOLE_YELLOW_BRIGHT_OUTPUT" baseAttributes="CONSOLE_YELLOW_OUTPUT" />
     <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="fabd2f" />
+        <option name="FOREGROUND" value="e6c067" />
       </value>
     </option>
     <option name="CSS.CLASS_NAME">
@@ -260,6 +260,7 @@
     <option name="CTRL_CLICKABLE">
       <value>
         <option name="FOREGROUND" value="5697ed" />
+        <option name="EFFECT_TYPE" value="-1" />
       </value>
     </option>
     <option name="CUSP_BRACKETS_ATTR">
@@ -332,7 +333,7 @@
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="83c5bf" />
+        <option name="FOREGROUND" value="8bd0c6" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
@@ -347,12 +348,12 @@
     </option>
     <option name="DEFAULT_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="ee96a2" />
+        <option name="FOREGROUND" value="d4a7eb" />
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="8e8572" />
+        <option name="FOREGROUND" value="666a73" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
@@ -384,12 +385,12 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="8ab8f8" />
+        <option name="FOREGROUND" value="8fbeff" />
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
       <value>
-        <option name="FOREGROUND" value="c17dff" />
+        <option name="FOREGROUND" value="de92ff" />
       </value>
     </option>
     <option name="DEFAULT_HIGHLIGHTED_REFERENCE">
@@ -400,13 +401,13 @@
     </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
-        <option name="FOREGROUND" value="c2bdab" />
+        <option name="FOREGROUND" value="ccc6b4" />
       </value>
     </option>
     <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="aec761" />
+        <option name="FOREGROUND" value="98cb86" />
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
@@ -418,7 +419,7 @@
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="f25f5c" />
+        <option name="FOREGROUND" value="f86681" />
       </value>
     </option>
     <option name="DEFAULT_LABEL">
@@ -434,22 +435,22 @@
     </option>
     <option name="DEFAULT_METADATA">
       <value>
-        <option name="FOREGROUND" value="a69b83" />
+        <option name="FOREGROUND" value="929b99" />
       </value>
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
-        <option name="FOREGROUND" value="cda2e3" />
+        <option name="FOREGROUND" value="d9aaf0" />
       </value>
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="a7c066" />
+        <option name="FOREGROUND" value="de85ff" />
       </value>
     </option>
     <option name="DEFAULT_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="e7c167" />
+        <option name="FOREGROUND" value="e6c067" />
       </value>
     </option>
     <option name="DEFAULT_PARENTHS">
@@ -481,7 +482,7 @@
     </option>
     <option name="DEFAULT_STATIC_FIELD">
       <value>
-        <option name="FOREGROUND" value="c5a4e5" />
+        <option name="FOREGROUND" value="9ec0db" />
       </value>
     </option>
     <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
@@ -522,7 +523,7 @@
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option name="BACKGROUND" value="1e1e1e" />
+        <option name="BACKGROUND" value="5b5b5b" />
         <option name="ERROR_STRIPE_COLOR" value="0" />
       </value>
     </option>
@@ -534,7 +535,7 @@
     </option>
     <option name="DIFF_MODIFIED">
       <value>
-        <option name="BACKGROUND" value="345b79" />
+        <option name="BACKGROUND" value="2a6065" />
         <option name="ERROR_STRIPE_COLOR" value="7ea6fc" />
       </value>
     </option>
@@ -559,7 +560,7 @@
     </option>
     <option name="ENUM_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="eaa6c1" />
+        <option name="FOREGROUND" value="e7a4d0" />
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
@@ -725,7 +726,11 @@
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
-    <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
+    <option name="HTML_ATTRIBUTE_VALUE">
+      <value>
+        <option name="FOREGROUND" value="b8bd3b" />
+      </value>
+    </option>
     <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />
     <option name="HTML_TAG_NAME">
@@ -1299,7 +1304,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="b3af9f" />
-        <option name="BACKGROUND" value="2f3034" />
+        <option name="BACKGROUND" value="323436" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
@@ -1330,7 +1335,7 @@
     </option>
     <option name="TS.ENUM">
       <value>
-        <option name="FOREGROUND" value="e88bcb" />
+        <option name="FOREGROUND" value="e7a4d0" />
       </value>
     </option>
     <option name="TS.PRIMITIVE.TYPES">
