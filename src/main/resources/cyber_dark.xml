@@ -10,6 +10,7 @@
   <colors>
     <option name="ADDED_LINES_COLOR" value="628556" />
     <option name="ANNOTATIONS_COLOR" value="0" />
+    <option name="BREADCRUMBS_BORDER_COLOR" value="4f4f4f" />
     <option name="CARET_COLOR" value="decfa9" />
     <option name="CARET_ROW_COLOR" value="383940" />
     <option name="CONSOLE_BACKGROUND_KEY" value="" />
@@ -146,11 +147,13 @@
     <option name="BREADCRUMBS_DEFAULT">
       <value>
         <option name="FOREGROUND" value="bdaf93" />
+        <option name="BACKGROUND" value="464646" />
       </value>
     </option>
     <option name="BREADCRUMBS_HOVERED">
       <value>
         <option name="FOREGROUND" value="ebdbb2" />
+        <option name="BACKGROUND" value="656569" />
       </value>
     </option>
     <option name="BREADCRUMBS_INACTIVE">
@@ -1304,7 +1307,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="c9c0b7" />
-        <option name="BACKGROUND" value="323436" />
+        <option name="BACKGROUND" value="2d2f30" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
