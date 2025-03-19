@@ -4,9 +4,10 @@
   "author": "qyengyn",
   "editorScheme": "/cyber_dark.xml",
   "colors": {
-    "background": "#27282b",
-    "darkerBackground": "#232426",
-    "editor": "#32302F",
+    "background": "#363a3d",
+    "darker5Background": "#2f3133",
+    "darker10Background": "#27292e",
+    "editor": "#2C2E33",
     "selection": "#094770",
     "text": "#b3afa2",
     "textHighlight": "#b3afa2",
@@ -15,9 +16,9 @@
     "selectedText": "#cfc8ba",
     "inactiveSelection": "#383635",
     "accent": "#3372ed",
-    "borderLow": "#2e3033",
-    "borderNeutral": "#3a3c40",
-    "border": "#47494d",
+    "borderLow": "#44484d",
+    "borderNeutral": "#44484d",
+    "border": "#4d5157",
     "notification": "#45494A"
   },
   "icons": {
@@ -69,19 +70,19 @@
     },
     "Menu": {
       "separatorColor": "borderNeutral",
-      "background": "darkerBackground",
+      "background": "darker10Background",
       "selectionBackground": "selection"
     },
     "PopupMenu": {
-      "background": "darkerBackground"
+      "background": "darker10Background"
     },
     "MenuItem": {
-      "background": "darkerBackground",
+      "background": "darker10Background",
       "acceleratorForeground": "infoText",
       "disabledForeground": "disabledText"
     },
     "Popup": {
-      "background": "darkerBackground"
+      "background": "darker10Background"
     },
     "PopupMenuSeparator": {
       "height": 13,
@@ -92,7 +93,7 @@
       "borderColor": "borderNeutral"
     },
     "ToolTip" : {
-      "background": "darkerBackground",
+      "background": "darker10Background",
       "paintBorder": true,
       "borderColor": "#1c1c1c"
     },
@@ -107,6 +108,7 @@
       }
     },
     "ToolWindow": {
+      "background": "darker5Background",
       "Header": {
         "borderColor": "borderNeutral",
         "inactiveBackground": "background"
