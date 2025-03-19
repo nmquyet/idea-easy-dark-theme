@@ -4,8 +4,8 @@
   "author": "qyengyn",
   "editorScheme": "/cyber_dark.xml",
   "colors": {
-    "background": "#363a3d",
-    "darker5Background": "#2f3133",
+    "background": "#313438",
+    "darker5Background": "#313438",
     "darker10Background": "#27292e",
     "editor": "#2C2E33",
     "selection": "#094770",
@@ -16,8 +16,8 @@
     "selectedText": "#cfc8ba",
     "inactiveSelection": "#383635",
     "accent": "#3372ed",
-    "borderLow": "#44484d",
-    "borderNeutral": "#44484d",
+    "borderLow": "#3d4045",
+    "borderNeutral": "#3d4045",
     "border": "#4d5157",
     "notification": "#45494A"
   },
