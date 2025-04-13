@@ -4,9 +4,9 @@
   "author": "qyengyn",
   "editorScheme": "/cyber_dark.xml",
   "colors": {
-    "background": "#313438",
-    "darker5Background": "#313438",
-    "darker10Background": "#27292e",
+    "background": "#373738",
+    "darker5Background": "#2f2f30",
+    "darker10Background": "#2a2a2b",
     "editor": "#2C2E33",
     "selection": "#094770",
     "text": "#a8a8a8",
