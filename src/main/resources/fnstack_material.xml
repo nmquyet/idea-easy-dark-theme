@@ -314,7 +314,7 @@
     </option>
     <option name="DEFAULT_ATTRIBUTE">
       <value>
-        <option name="FOREGROUND" value="d99dda" />
+        <option name="FOREGROUND" value="ee974f" />
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
@@ -335,7 +335,7 @@
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="62879b" />
+        <option name="FOREGROUND" value="6689a4" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
@@ -409,7 +409,7 @@
     <option name="DEFAULT_INSTANCE_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="489384" />
+        <option name="FOREGROUND" value="5a988b" />
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
@@ -421,7 +421,7 @@
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="a45465" />
+        <option name="FOREGROUND" value="b58db6" />
       </value>
     </option>
     <option name="DEFAULT_LABEL">
@@ -437,7 +437,7 @@
     </option>
     <option name="DEFAULT_METADATA">
       <value>
-        <option name="FOREGROUND" value="527642" />
+        <option name="FOREGROUND" value="65815d" />
       </value>
     </option>
     <option name="DEFAULT_NUMBER">
@@ -452,7 +452,7 @@
     </option>
     <option name="DEFAULT_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="e3b569" />
+        <option name="FOREGROUND" value="e3bd7b" />
       </value>
     </option>
     <option name="DEFAULT_PARENTHS">
@@ -490,7 +490,7 @@
     <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
     <option name="DEFAULT_STRING">
       <value>
-        <option name="FOREGROUND" value="8bad61" />
+        <option name="FOREGROUND" value="9bbd79" />
       </value>
     </option>
     <option name="DEFAULT_TAG">
@@ -562,7 +562,7 @@
     </option>
     <option name="ENUM_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="b2775e" />
+        <option name="FOREGROUND" value="b48268" />
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
@@ -728,18 +728,10 @@
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
-    <option name="HTML_ATTRIBUTE_VALUE">
-      <value>
-        <option name="FOREGROUND" value="b8bd3b" />
-      </value>
-    </option>
+    <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
     <option name="HTML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />
-    <option name="HTML_TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="8db580" />
-      </value>
-    </option>
+    <option name="HTML_TAG_NAME" baseAttributes="DEFAULT_KEYWORD" />
     <option name="HYPERLINK_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="5697ed" />
@@ -860,7 +852,7 @@
     <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD" />
     <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
-    <option name="JSP_DIRECTIVE_NAME" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="JSP_DIRECTIVE_NAME" baseAttributes="" />
     <option name="KOTLIN_ANNOTATION">
       <value>
         <option name="FOREGROUND" value="83786e" />
@@ -1234,7 +1226,7 @@
         <option name="FOREGROUND" value="f9f5d7" />
       </value>
     </option>
-    <option name="SASS_COMMENT" baseAttributes="CSS.COMMENT" />
+    <option name="SASS_COMMENT" baseAttributes="" />
     <option name="SASS_MIXIN">
       <value>
         <option name="FOREGROUND" value="fb4934" />
@@ -1292,7 +1284,7 @@
         <option name="FOREGROUND" value="fabd2f" />
       </value>
     </option>
-    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES" />
+    <option name="Static method access" baseAttributes="" />
     <option name="String">
       <value>
         <option name="FOREGROUND" value="8ec07c" />
@@ -1305,7 +1297,7 @@
     </option>
     <option name="TEXT">
       <value>
-        <option name="FOREGROUND" value="c9c0b7" />
+        <option name="FOREGROUND" value="c4c4c4" />
         <option name="BACKGROUND" value="2a2a2b" />
       </value>
     </option>
@@ -1337,7 +1329,7 @@
     </option>
     <option name="TS.ENUM">
       <value>
-        <option name="FOREGROUND" value="a86c85" />
+        <option name="FOREGROUND" value="b48268" />
       </value>
     </option>
     <option name="TS.INTERFACE">
@@ -1406,11 +1398,6 @@
       </value>
     </option>
     <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
-    <option name="XML_ATTRIBUTE_VALUE">
-      <value>
-        <option name="FOREGROUND" value="c08870" />
-      </value>
-    </option>
     <option name="XML_CUSTOM_TAG_NAME" baseAttributes="XML_TAG_NAME" />
     <option name="XML_ENTITY_REFERENCE" baseAttributes="DEFAULT_ENTITY" />
     <option name="XML_NS_PREFIX">
@@ -1427,7 +1414,7 @@
     <option name="XML_TAG_DATA" baseAttributes="TEXT" />
     <option name="XML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="9f7d9f" />
+        <option name="FOREGROUND" value="c46e66" />
       </value>
     </option>
     <option name="XPATH.FUNCTION" baseAttributes="DEFAULT_FUNCTION_CALL" />
