@@ -188,7 +188,7 @@ public class DynamicColorIdentifierHighlightHandler extends HighlightUsagesHandl
                         hostFile.getTextRange().getEndOffset(),
                         infos,
                         this.getId());
-            } catch (IllegalArgumentException e) {
+            } catch (Exception e) {
                 IdentifierHighlighterPass.clearMyHighlights(this.myEditor.getDocument(), this.myEditor.getProject());
                 return true;
             }
