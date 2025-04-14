@@ -179,14 +179,19 @@ public class DynamicColorIdentifierHighlightHandler extends HighlightUsagesHandl
                     : Collections.emptyList();
             PsiFile hostFile = InjectedLanguageManager.getInstance(this.myFile.getProject())
                     .getTopLevelFile(this.myFile);
-            BackgroundUpdateHighlightersUtil.setHighlightersToEditor(
-                    hostFile.getProject(),
-                    hostFile,
-                    hostFile.getFileDocument(),
-                    hostFile.getTextRange().getStartOffset(),
-                    hostFile.getTextRange().getEndOffset(),
-                    infos,
-                    this.getId());
+            try {
+                BackgroundUpdateHighlightersUtil.setHighlightersToEditor(
+                        hostFile.getProject(),
+                        hostFile,
+                        hostFile.getFileDocument(),
+                        hostFile.getTextRange().getStartOffset(),
+                        hostFile.getTextRange().getEndOffset(),
+                        infos,
+                        this.getId());
+            } catch (IllegalArgumentException e) {
+                IdentifierHighlighterPass.clearMyHighlights(this.myEditor.getDocument(), this.myEditor.getProject());
+                return true;
+            }
         }
 
         return false;
