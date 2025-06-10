@@ -2,10 +2,10 @@
   "name": "Cyber Dark",
   "dark": true,
   "author": "qyengyn",
-  "editorScheme": "/cyber_dark.xml",
+  "editorScheme": "/fnstack_material.xml",
   "colors": {
-    "background": "#2f2f30",
-    "darker5Background": "#2f2f30",
+    "background": "#2c2c2c",
+    "darker5Background": "#2c2c2c",
     "darker10Background": "#2a2a2b",
     "editor": "#2C2E33",
     "selection": "#094770",
